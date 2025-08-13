@@ -1,0 +1,32 @@
+# Setup
+units           lj
+atom_style      molecular
+dimension       3
+boundary        p p p
+
+# Initial configuration
+read_data "init.data"
+mass            1 1.0
+
+# Pair potential
+pair_style      lj/cut 3.0
+pair_modify     shift yes
+pair_coeff      1 1 1.0 1.0
+
+# Bonds and Angles
+bond_style harmonic
+bond_coeff 1 500 1.0
+special_bonds lj 0.0 1.0 1.0
+
+angle_style harmonic
+angle_coeff 1 10 180
+
+# Velocities
+velocity        all create 1.5 42 rot no mom yes dist gaussian
+
+# Write trajectory
+dump trajectory all custom 1 run_lammps.dat id type x y z vx vy vz ix iy iz
+
+# Equilibration
+fix             integrator all nve
+run             1000

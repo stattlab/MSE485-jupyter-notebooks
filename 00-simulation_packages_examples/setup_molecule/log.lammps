@@ -1,0 +1,14 @@
+LAMMPS (22 Jul 2025)
+# Setup
+units           lj
+atom_style      molecular
+dimension       3
+boundary        p p p
+
+# Pair potential
+pair_style      lj/cut 3.0
+pair_modify     shift yes
+pair_coeff      1 1 1.0 1.0
+ERROR: Pair_coeff command before simulation box is defined
+For more information see https://docs.lammps.org/err0033 (src/input.cpp:1743)
+Last input line: pair_coeff 1 1 1.0 1.0
