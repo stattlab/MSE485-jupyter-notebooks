@@ -2,7 +2,6 @@
 # $ conda create --name <env> --file <this file>
 # platform: osx-arm64
 # created-by: conda 24.11.3
-conda=24.11.3=py311hca03da5_0
 hoomd=5.3.1=cpu_py313hfe8af28_1
 fresnel=0.13.7=py311h7e6f128_0
 freud=3.1.0=py311h84648e7_1
