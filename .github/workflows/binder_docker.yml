@@ -1,6 +1,7 @@
-name: Test
+name: Create DockerImage for Binder
 on: push
-
+permissions:
+    contents: write
 jobs:
   binder:
     runs-on: ubuntu-latest
