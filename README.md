@@ -1,8 +1,11 @@
 # MSE485-jupyter-notebooks
-Jupyter Notebooks for MSE 485 Atomistic Scale Simulations
+Jupyter Notebooks for MSE 485 Atomistic Scale Simulations.
 
+## Open with mybinder.org 
 
-01-periodic-boundary-conditions [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stattlab/MSE485-jupyter-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2F%2F01-periodic-boundary-conditions%2F01-periodic-boundary-conditions.ipynb)
+Open any of the links below. Note that it can be slow to load and result in Network timeout or server connection issues. 
+
+01-periodic-boundary-conditions.ipynb [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stattlab/MSE485-jupyter-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2F%2F01-periodic-boundary-conditions%2F01-periodic-boundary-conditions.ipynb)
 
 
 02-molecule-definition.ipynb  [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stattlab/MSE485-jupyter-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2F%2F02-molecule-definition%2F02-molecule-definition.ipynb)
@@ -16,3 +19,23 @@ Jupyter Notebooks for MSE 485 Atomistic Scale Simulations
 
 05-velocity-autocorrelation-function.ipynb [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stattlab/MSE485-jupyter-notebooks/HEAD?urlpath=%2Fdoc%2Ftree%2F%2F05-velocity-autocorrelation-function%2F05-velocity-autocorrelation-function.ipynb)
 
+## Open with Google Colab 
+
+Open any of the links below, then add the following two cells at the top:
+
+```
+!pip install -q condacolab
+import condacolab
+condacolab.install()
+```
+and 
+```
+%%capture
+!conda install scipy matplotlib numpy gsd freud fresnel hoomd
+```
+
+01-periodic-boundary-conditions.ipynb [COLAB](https://colab.research.google.com/github/stattlab/MSE485-jupyter-notebooks/blob/main/01-periodic-boundary-conditions/01-periodic-boundary-conditions.ipynb)
+
+## Download and open locally 
+
+You can clone this repository onto your own computer and use the `environment.yml` file to create a conda environment. You will also need to install jupyter notebook (`conda install jupyter`), and then you can execute the jupyter notebooks locally with `jupyter notebook path/to/notebook.ipynb`. 
