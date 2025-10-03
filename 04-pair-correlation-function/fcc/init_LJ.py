@@ -4,9 +4,8 @@ import hoomd
 import freud
 
 
-kT= 0.0001
+kT= 0.00
 a = np.sqrt(2)*1.056
-
 
 fcc = freud.data.UnitCell.fcc()
 box, positions = fcc.generate_system(5)
@@ -50,13 +49,6 @@ gsd = hoomd.write.GSD(mode='wb',trigger=hoomd.trigger.Periodic(100),
 simulation.operations.writers.append(gsd)
 
 # Equilibration
-#nve = hoomd.md.methods.ConstantVolume(filter=hoomd.filter.All())
-#integrator.methods = [nve]
-
-#npt = hoomd.md.methods.ConstantPressure(filter=hoomd.filter.All()
-#                                        , S=0, tauS=1, couple='none',
-#                                        thermostat=hoomd.md.methods.thermostats.MTTK(kT=kT,tau=0.5))
-
 nvt = hoomd.md.methods.ConstantVolume(filter=hoomd.filter.All(),
                                         thermostat=hoomd.md.methods.thermostats.MTTK(kT=kT,tau=0.5))
 
