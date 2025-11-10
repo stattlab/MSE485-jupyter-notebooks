@@ -1,0 +1,3065 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+""" To recover the Python script to generate this SVG, delete the line above -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-3100 -3100 6200 6200">
+ <title>Box-Muller transform visualisation</title>
+ <desc>Visualisation of the Box-Muller transform by CMG Lee. The coloured points in the unit square (u1, u2), drawn as circles, are mapped to a 2D Gaussian (z0, z1), drawn as crosses. Points within 1 standard deviation are drawn with more saturation. The plots at the margins are the probability distribution functions of z0 and z1. Note that z0 and z1 are unbounded; they appear to be in [-2.5, 2.5] due to the choice of the illustrated points. Hover over or tap a point to highlight it.</desc>
+ <style type="text/css">
+  #main { font-family:Helvetica,Arial,sans-serif; font-size:320px; text-anchor:middle;
+          stroke-linejoin:round; stroke-width:10; stroke:none; fill:none; }
+  #main:hover            { stroke-opacity:0.2; fill-opacity:0.2; }
+  .nofade, .active:hover { stroke-opacity:1;   fill-opacity:1;   }
+  .active                { stroke-opacity:0;   stroke-width:30;  }
+  .noevent               { pointer-events:none; }
+ </style>
+ <defs>
+  <circle id="orig" cx="0" cy="0" r="20"/>
+  <path id="tran" d="M 0,-50 Q 0,0 50,0 Q 0,0 0,50 Q 0,0 -50,0 Q 0,0 0,-50 Z"/>
+  <!--
+  <path id="tran" d="M 0,-30 V 30 M -30,0 H 30"/>
+  -->
+  <pattern id="pattern_grid_1" patternUnits="userSpaceOnUse" width="200" height="200">
+   <rect x="0" y="0" width="200" height="200" stroke-width="5" stroke="#999999" fill="none"/>
+  </pattern>
+  <pattern id="pattern_grid_5" patternUnits="userSpaceOnUse" width="1000" height="1000">
+   <rect x="0" y="0" width="1000" height="1000" stroke-width="10" stroke="#999999" fill="url(#pattern_grid_1)"/>
+  </pattern>
+  <g id="grid">
+   <rect x="-2500" y="-2500" width="5000" height="5000" stroke="#999999" fill="url(#pattern_grid_5)"/>
+   <g stroke="#ff0000">
+    <circle cx="0" cy="0" r="1000"/>
+    <path d="M 606.53 -1000 V 0"/>
+    <path d="M 606.53 -1050 V -2600" stroke-dasharray="100,50"/>
+   </g>
+   <text x="606.53" y="-2550" fill="#ff0000"><tspan font-style="italic">e</tspan><tspan dy="-100" font-size="80%">-&#189;</tspan></text>
+   <g fill="#000000">
+    <g transform="translate(0,2800)">
+     <text x="-2000" y="0">-2</text>
+     <text x="-1000" y="0">-1</text>
+     <text x="0"     y="0">0</text>
+     <text x="1000"  y="0">1</text>
+     <text x="2000"  y="0">2</text>
+     <text x="0"   y="250"
+      ><tspan font-style="italic">u</tspan><tspan font-size="60%" font-weight="bold">1</tspan><tspan>&#160;(o),&#160;</tspan
+      ><tspan font-style="italic">z</tspan><tspan font-size="60%" font-weight="bold">0</tspan><tspan>&#160;(+)</tspan></text>
+    </g>
+    <g transform="translate(-2670,100)">
+     <text x="0" y="-2000">2</text>
+     <text x="0" y="-1000">1</text>
+     <text x="0" y="0"    >0</text>
+     <text x="0" y="1000" >-1</text>
+     <text x="0" y="2000" >-2</text>
+     <text transform="rotate(-90)" x="0" y="-180"
+      ><tspan font-style="italic">u</tspan><tspan font-size="50%" font-weight="bold">2</tspan><tspan>&#160;(o),&#160;</tspan
+      ><tspan font-style="italic">z</tspan><tspan font-size="50%" font-weight="bold">1</tspan><tspan>&#160;(+)</tspan></text>
+    </g>
+   </g>
+  </g>
+ </defs>
+ <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
+ <g id="main">
+  <g class="nofade">
+   <use xlink:href="#grid"/>
+  </g>
+<!-- BEGIN_DYNAMIC_SVG { -->
+  <g class="active" stroke="#FF00FF" fill="#FF00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-1000)"/>
+   <title>u1=1.00, u2=1.00 &#8594; z0=-0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#FF00F2" fill="#FF00F2">
+   <use xlink:href="#tran" transform="translate(320,-2998)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(320,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,-1000)"/>
+   <title>u1=0.95, u2=1.00 &#8594; z0=0.32, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF00E5" fill="#FF00E5">
+   <use xlink:href="#tran" transform="translate(459,-2979)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(459,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,-1000)"/>
+   <title>u1=0.90, u2=1.00 &#8594; z0=0.46, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF00D8" fill="#FF00D8">
+   <use xlink:href="#tran" transform="translate(570,-2959)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(570,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,-1000)"/>
+   <title>u1=0.85, u2=1.00 &#8594; z0=0.57, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF00CC" fill="#FF00CC">
+   <use xlink:href="#tran" transform="translate(668,-2939)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(668,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,-1000)"/>
+   <title>u1=0.80, u2=1.00 &#8594; z0=0.67, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF00BF" fill="#FF00BF">
+   <use xlink:href="#tran" transform="translate(758,-2919)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(758,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,-1000)"/>
+   <title>u1=0.75, u2=1.00 &#8594; z0=0.76, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF00B2" fill="#FF00B2">
+   <use xlink:href="#tran" transform="translate(844,-2899)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(844,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,-1000)"/>
+   <title>u1=0.70, u2=1.00 &#8594; z0=0.84, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF00A5" fill="#FF00A5">
+   <use xlink:href="#tran" transform="translate(928,-2879)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(928,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,-1000)"/>
+   <title>u1=0.65, u2=1.00 &#8594; z0=0.93, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9999" fill="#FF9999">
+   <use xlink:href="#tran" transform="translate(1010,-2859)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1010,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,-1000)"/>
+   <title>u1=0.60, u2=1.00 &#8594; z0=1.01, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF998C" fill="#FF998C">
+   <use xlink:href="#tran" transform="translate(1093,-2839)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1093,0)"/>
+   <use xlink:href="#orig" transform="translate(550,-1000)"/>
+   <title>u1=0.55, u2=1.00 &#8594; z0=1.09, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF997F" fill="#FF997F">
+   <use xlink:href="#tran" transform="translate(1177,-2819)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1177,0)"/>
+   <use xlink:href="#orig" transform="translate(500,-1000)"/>
+   <title>u1=0.50, u2=1.00 &#8594; z0=1.18, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9972" fill="#FF9972">
+   <use xlink:href="#tran" transform="translate(1263,-2799)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1263,0)"/>
+   <use xlink:href="#orig" transform="translate(450,-1000)"/>
+   <title>u1=0.45, u2=1.00 &#8594; z0=1.26, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9966" fill="#FF9966">
+   <use xlink:href="#tran" transform="translate(1353,-2779)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1353,0)"/>
+   <use xlink:href="#orig" transform="translate(400,-1000)"/>
+   <title>u1=0.40, u2=1.00 &#8594; z0=1.35, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9959" fill="#FF9959">
+   <use xlink:href="#tran" transform="translate(1449,-2759)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1449,0)"/>
+   <use xlink:href="#orig" transform="translate(350,-1000)"/>
+   <title>u1=0.35, u2=1.00 &#8594; z0=1.45, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF994C" fill="#FF994C">
+   <use xlink:href="#tran" transform="translate(1551,-2739)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1551,0)"/>
+   <use xlink:href="#orig" transform="translate(300,-1000)"/>
+   <title>u1=0.30, u2=1.00 &#8594; z0=1.55, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF993F" fill="#FF993F">
+   <use xlink:href="#tran" transform="translate(1665,-2719)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1665,0)"/>
+   <use xlink:href="#orig" transform="translate(250,-1000)"/>
+   <title>u1=0.25, u2=1.00 &#8594; z0=1.67, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9933" fill="#FF9933">
+   <use xlink:href="#tran" transform="translate(1794,-2699)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1794,0)"/>
+   <use xlink:href="#orig" transform="translate(200,-1000)"/>
+   <title>u1=0.20, u2=1.00 &#8594; z0=1.79, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9926" fill="#FF9926">
+   <use xlink:href="#tran" transform="translate(1947,-2679)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1947,0)"/>
+   <use xlink:href="#orig" transform="translate(150,-1000)"/>
+   <title>u1=0.15, u2=1.00 &#8594; z0=1.95, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF9919" fill="#FF9919">
+   <use xlink:href="#tran" transform="translate(2145,-2659)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(2145,0)"/>
+   <use xlink:href="#orig" transform="translate(100,-1000)"/>
+   <title>u1=0.10, u2=1.00 &#8594; z0=2.15, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#FF990C" fill="#FF990C">
+   <use xlink:href="#tran" transform="translate(2447,-2639)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(2447,0)"/>
+   <use xlink:href="#orig" transform="translate(50,-1000)"/>
+   <title>u1=0.05, u2=1.00 &#8594; z0=2.45, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#F200FF" fill="#F200FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-950)"/>
+   <title>u1=1.00, u2=0.95 &#8594; z0=-0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#F200F2" fill="#F200F2">
+   <use xlink:href="#tran" transform="translate(304,-3000)"/>
+   <use xlink:href="#tran" transform="translate(3016,98)"/>
+   <use xlink:href="#tran" transform="translate(304,98)"/>
+   <use xlink:href="#orig" transform="translate(950,-950)"/>
+   <title>u1=0.95, u2=0.95 &#8594; z0=0.30, z1=-0.10</title>
+  </g>
+  <g class="active" stroke="#F200E5" fill="#F200E5">
+   <use xlink:href="#tran" transform="translate(436,-2982)"/>
+   <use xlink:href="#tran" transform="translate(3014,141)"/>
+   <use xlink:href="#tran" transform="translate(436,141)"/>
+   <use xlink:href="#orig" transform="translate(900,-950)"/>
+   <title>u1=0.90, u2=0.95 &#8594; z0=0.44, z1=-0.14</title>
+  </g>
+  <g class="active" stroke="#F200D8" fill="#F200D8">
+   <use xlink:href="#tran" transform="translate(542,-2964)"/>
+   <use xlink:href="#tran" transform="translate(3012,176)"/>
+   <use xlink:href="#tran" transform="translate(542,176)"/>
+   <use xlink:href="#orig" transform="translate(850,-950)"/>
+   <title>u1=0.85, u2=0.95 &#8594; z0=0.54, z1=-0.18</title>
+  </g>
+  <g class="active" stroke="#F200CC" fill="#F200CC">
+   <use xlink:href="#tran" transform="translate(635,-2946)"/>
+   <use xlink:href="#tran" transform="translate(3010,206)"/>
+   <use xlink:href="#tran" transform="translate(635,206)"/>
+   <use xlink:href="#orig" transform="translate(800,-950)"/>
+   <title>u1=0.80, u2=0.95 &#8594; z0=0.64, z1=-0.21</title>
+  </g>
+  <g class="active" stroke="#F200BF" fill="#F200BF">
+   <use xlink:href="#tran" transform="translate(721,-2927)"/>
+   <use xlink:href="#tran" transform="translate(3008,234)"/>
+   <use xlink:href="#tran" transform="translate(721,234)"/>
+   <use xlink:href="#orig" transform="translate(750,-950)"/>
+   <title>u1=0.75, u2=0.95 &#8594; z0=0.72, z1=-0.23</title>
+  </g>
+  <g class="active" stroke="#F200B2" fill="#F200B2">
+   <use xlink:href="#tran" transform="translate(803,-2908)"/>
+   <use xlink:href="#tran" transform="translate(3005,260)"/>
+   <use xlink:href="#tran" transform="translate(803,260)"/>
+   <use xlink:href="#orig" transform="translate(700,-950)"/>
+   <title>u1=0.70, u2=0.95 &#8594; z0=0.80, z1=-0.26</title>
+  </g>
+  <g class="active" stroke="#F200A5" fill="#F200A5">
+   <use xlink:href="#tran" transform="translate(882,-2890)"/>
+   <use xlink:href="#tran" transform="translate(3002,286)"/>
+   <use xlink:href="#tran" transform="translate(882,286)"/>
+   <use xlink:href="#orig" transform="translate(650,-950)"/>
+   <title>u1=0.65, u2=0.95 &#8594; z0=0.88, z1=-0.29</title>
+  </g>
+  <g class="active" stroke="#F29999" fill="#F29999">
+   <use xlink:href="#tran" transform="translate(961,-2871)"/>
+   <use xlink:href="#tran" transform="translate(2999,312)"/>
+   <use xlink:href="#tran" transform="translate(961,312)"/>
+   <use xlink:href="#orig" transform="translate(600,-950)"/>
+   <title>u1=0.60, u2=0.95 &#8594; z0=0.96, z1=-0.31</title>
+  </g>
+  <g class="active" stroke="#F2998C" fill="#F2998C">
+   <use xlink:href="#tran" transform="translate(1039,-2852)"/>
+   <use xlink:href="#tran" transform="translate(2996,337)"/>
+   <use xlink:href="#tran" transform="translate(1039,337)"/>
+   <use xlink:href="#orig" transform="translate(550,-950)"/>
+   <title>u1=0.55, u2=0.95 &#8594; z0=1.04, z1=-0.34</title>
+  </g>
+  <g class="active" stroke="#F2997F" fill="#F2997F">
+   <use xlink:href="#tran" transform="translate(1119,-2833)"/>
+   <use xlink:href="#tran" transform="translate(2993,363)"/>
+   <use xlink:href="#tran" transform="translate(1119,363)"/>
+   <use xlink:href="#orig" transform="translate(500,-950)"/>
+   <title>u1=0.50, u2=0.95 &#8594; z0=1.12, z1=-0.36</title>
+  </g>
+  <g class="active" stroke="#F29972" fill="#F29972">
+   <use xlink:href="#tran" transform="translate(1201,-2813)"/>
+   <use xlink:href="#tran" transform="translate(2989,390)"/>
+   <use xlink:href="#tran" transform="translate(1201,390)"/>
+   <use xlink:href="#orig" transform="translate(450,-950)"/>
+   <title>u1=0.45, u2=0.95 &#8594; z0=1.20, z1=-0.39</title>
+  </g>
+  <g class="active" stroke="#F29966" fill="#F29966">
+   <use xlink:href="#tran" transform="translate(1287,-2794)"/>
+   <use xlink:href="#tran" transform="translate(2985,418)"/>
+   <use xlink:href="#tran" transform="translate(1287,418)"/>
+   <use xlink:href="#orig" transform="translate(400,-950)"/>
+   <title>u1=0.40, u2=0.95 &#8594; z0=1.29, z1=-0.42</title>
+  </g>
+  <g class="active" stroke="#F29959" fill="#F29959">
+   <use xlink:href="#tran" transform="translate(1378,-2774)"/>
+   <use xlink:href="#tran" transform="translate(2980,447)"/>
+   <use xlink:href="#tran" transform="translate(1378,447)"/>
+   <use xlink:href="#orig" transform="translate(350,-950)"/>
+   <title>u1=0.35, u2=0.95 &#8594; z0=1.38, z1=-0.45</title>
+  </g>
+  <g class="active" stroke="#F2994C" fill="#F2994C">
+   <use xlink:href="#tran" transform="translate(1475,-2754)"/>
+   <use xlink:href="#tran" transform="translate(2975,479)"/>
+   <use xlink:href="#tran" transform="translate(1475,479)"/>
+   <use xlink:href="#orig" transform="translate(300,-950)"/>
+   <title>u1=0.30, u2=0.95 &#8594; z0=1.48, z1=-0.48</title>
+  </g>
+  <g class="active" stroke="#F2993F" fill="#F2993F">
+   <use xlink:href="#tran" transform="translate(1583,-2733)"/>
+   <use xlink:href="#tran" transform="translate(2969,514)"/>
+   <use xlink:href="#tran" transform="translate(1583,514)"/>
+   <use xlink:href="#orig" transform="translate(250,-950)"/>
+   <title>u1=0.25, u2=0.95 &#8594; z0=1.58, z1=-0.51</title>
+  </g>
+  <g class="active" stroke="#F29933" fill="#F29933">
+   <use xlink:href="#tran" transform="translate(1706,-2713)"/>
+   <use xlink:href="#tran" transform="translate(2962,554)"/>
+   <use xlink:href="#tran" transform="translate(1706,554)"/>
+   <use xlink:href="#orig" transform="translate(200,-950)"/>
+   <title>u1=0.20, u2=0.95 &#8594; z0=1.71, z1=-0.55</title>
+  </g>
+  <g class="active" stroke="#F29926" fill="#F29926">
+   <use xlink:href="#tran" transform="translate(1852,-2691)"/>
+   <use xlink:href="#tran" transform="translate(2952,601)"/>
+   <use xlink:href="#tran" transform="translate(1852,601)"/>
+   <use xlink:href="#orig" transform="translate(150,-950)"/>
+   <title>u1=0.15, u2=0.95 &#8594; z0=1.85, z1=-0.60</title>
+  </g>
+  <g class="active" stroke="#F29919" fill="#F29919">
+   <use xlink:href="#tran" transform="translate(2040,-2669)"/>
+   <use xlink:href="#tran" transform="translate(2940,663)"/>
+   <use xlink:href="#tran" transform="translate(2040,663)"/>
+   <use xlink:href="#orig" transform="translate(100,-950)"/>
+   <title>u1=0.10, u2=0.95 &#8594; z0=2.04, z1=-0.66</title>
+  </g>
+  <g class="active" stroke="#F2990C" fill="#F2990C">
+   <use xlink:href="#tran" transform="translate(2327,-2646)"/>
+   <use xlink:href="#tran" transform="translate(2919,756)"/>
+   <use xlink:href="#tran" transform="translate(2327,756)"/>
+   <use xlink:href="#orig" transform="translate(50,-950)"/>
+   <title>u1=0.05, u2=0.95 &#8594; z0=2.33, z1=-0.76</title>
+  </g>
+  <g class="active" stroke="#E500FF" fill="#E500FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-900)"/>
+   <title>u1=1.00, u2=0.90 &#8594; z0=-0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#E500F2" fill="#E500F2">
+   <use xlink:href="#tran" transform="translate(259,-3005)"/>
+   <use xlink:href="#tran" transform="translate(3011,188)"/>
+   <use xlink:href="#tran" transform="translate(259,188)"/>
+   <use xlink:href="#orig" transform="translate(950,-900)"/>
+   <title>u1=0.95, u2=0.90 &#8594; z0=0.26, z1=-0.19</title>
+  </g>
+  <g class="active" stroke="#E500E5" fill="#E500E5">
+   <use xlink:href="#tran" transform="translate(371,-2992)"/>
+   <use xlink:href="#tran" transform="translate(3004,269)"/>
+   <use xlink:href="#tran" transform="translate(371,269)"/>
+   <use xlink:href="#orig" transform="translate(900,-900)"/>
+   <title>u1=0.90, u2=0.90 &#8594; z0=0.37, z1=-0.27</title>
+  </g>
+  <g class="active" stroke="#E500D8" fill="#E500D8">
+   <use xlink:href="#tran" transform="translate(461,-2978)"/>
+   <use xlink:href="#tran" transform="translate(2997,335)"/>
+   <use xlink:href="#tran" transform="translate(461,335)"/>
+   <use xlink:href="#orig" transform="translate(850,-900)"/>
+   <title>u1=0.85, u2=0.90 &#8594; z0=0.46, z1=-0.34</title>
+  </g>
+  <g class="active" stroke="#E500CC" fill="#E500CC">
+   <use xlink:href="#tran" transform="translate(540,-2964)"/>
+   <use xlink:href="#tran" transform="translate(2989,392)"/>
+   <use xlink:href="#tran" transform="translate(540,392)"/>
+   <use xlink:href="#orig" transform="translate(800,-900)"/>
+   <title>u1=0.80, u2=0.90 &#8594; z0=0.54, z1=-0.39</title>
+  </g>
+  <g class="active" stroke="#E500BF" fill="#E500BF">
+   <use xlink:href="#tran" transform="translate(613,-2950)"/>
+   <use xlink:href="#tran" transform="translate(2981,445)"/>
+   <use xlink:href="#tran" transform="translate(613,445)"/>
+   <use xlink:href="#orig" transform="translate(750,-900)"/>
+   <title>u1=0.75, u2=0.90 &#8594; z0=0.61, z1=-0.45</title>
+  </g>
+  <g class="active" stroke="#E500B2" fill="#E500B2">
+   <use xlink:href="#tran" transform="translate(683,-2935)"/>
+   <use xlink:href="#tran" transform="translate(2972,496)"/>
+   <use xlink:href="#tran" transform="translate(683,496)"/>
+   <use xlink:href="#orig" transform="translate(700,-900)"/>
+   <title>u1=0.70, u2=0.90 &#8594; z0=0.68, z1=-0.50</title>
+  </g>
+  <g class="active" stroke="#E500A5" fill="#E500A5">
+   <use xlink:href="#tran" transform="translate(750,-2920)"/>
+   <use xlink:href="#tran" transform="translate(2963,545)"/>
+   <use xlink:href="#tran" transform="translate(750,545)"/>
+   <use xlink:href="#orig" transform="translate(650,-900)"/>
+   <title>u1=0.65, u2=0.90 &#8594; z0=0.75, z1=-0.55</title>
+  </g>
+  <g class="active" stroke="#E59999" fill="#E59999">
+   <use xlink:href="#tran" transform="translate(817,-2905)"/>
+   <use xlink:href="#tran" transform="translate(2954,594)"/>
+   <use xlink:href="#tran" transform="translate(817,594)"/>
+   <use xlink:href="#orig" transform="translate(600,-900)"/>
+   <title>u1=0.60, u2=0.90 &#8594; z0=0.82, z1=-0.59</title>
+  </g>
+  <g class="active" stroke="#E5998C" fill="#E5998C">
+   <use xlink:href="#tran" transform="translate(884,-2889)"/>
+   <use xlink:href="#tran" transform="translate(2944,642)"/>
+   <use xlink:href="#tran" transform="translate(884,642)"/>
+   <use xlink:href="#orig" transform="translate(550,-900)"/>
+   <title>u1=0.55, u2=0.90 &#8594; z0=0.88, z1=-0.64</title>
+  </g>
+  <g class="active" stroke="#E5997F" fill="#E5997F">
+   <use xlink:href="#tran" transform="translate(952,-2873)"/>
+   <use xlink:href="#tran" transform="translate(2933,692)"/>
+   <use xlink:href="#tran" transform="translate(952,692)"/>
+   <use xlink:href="#orig" transform="translate(500,-900)"/>
+   <title>u1=0.50, u2=0.90 &#8594; z0=0.95, z1=-0.69</title>
+  </g>
+  <g class="active" stroke="#E59972" fill="#E59972">
+   <use xlink:href="#tran" transform="translate(1022,-2856)"/>
+   <use xlink:href="#tran" transform="translate(2922,742)"/>
+   <use xlink:href="#tran" transform="translate(1022,742)"/>
+   <use xlink:href="#orig" transform="translate(450,-900)"/>
+   <title>u1=0.45, u2=0.90 &#8594; z0=1.02, z1=-0.74</title>
+  </g>
+  <g class="active" stroke="#E59966" fill="#E59966">
+   <use xlink:href="#tran" transform="translate(1095,-2839)"/>
+   <use xlink:href="#tran" transform="translate(2910,795)"/>
+   <use xlink:href="#tran" transform="translate(1095,795)"/>
+   <use xlink:href="#orig" transform="translate(400,-900)"/>
+   <title>u1=0.40, u2=0.90 &#8594; z0=1.10, z1=-0.80</title>
+  </g>
+  <g class="active" stroke="#E59959" fill="#E59959">
+   <use xlink:href="#tran" transform="translate(1172,-2820)"/>
+   <use xlink:href="#tran" transform="translate(2897,851)"/>
+   <use xlink:href="#tran" transform="translate(1172,851)"/>
+   <use xlink:href="#orig" transform="translate(350,-900)"/>
+   <title>u1=0.35, u2=0.90 &#8594; z0=1.17, z1=-0.85</title>
+  </g>
+  <g class="active" stroke="#E5994C" fill="#E5994C">
+   <use xlink:href="#tran" transform="translate(1255,-2801)"/>
+   <use xlink:href="#tran" transform="translate(2883,912)"/>
+   <use xlink:href="#tran" transform="translate(1255,912)"/>
+   <use xlink:href="#orig" transform="translate(300,-900)"/>
+   <title>u1=0.30, u2=0.90 &#8594; z0=1.26, z1=-0.91</title>
+  </g>
+  <g class="active" stroke="#E5993F" fill="#E5993F">
+   <use xlink:href="#tran" transform="translate(1347,-2781)"/>
+   <use xlink:href="#tran" transform="translate(2867,978)"/>
+   <use xlink:href="#tran" transform="translate(1347,978)"/>
+   <use xlink:href="#orig" transform="translate(250,-900)"/>
+   <title>u1=0.25, u2=0.90 &#8594; z0=1.35, z1=-0.98</title>
+  </g>
+  <g class="active" stroke="#E59933" fill="#E59933">
+   <use xlink:href="#tran" transform="translate(1451,-2759)"/>
+   <use xlink:href="#tran" transform="translate(2848,1054)"/>
+   <use xlink:href="#tran" transform="translate(1451,1054)"/>
+   <use xlink:href="#orig" transform="translate(200,-900)"/>
+   <title>u1=0.20, u2=0.90 &#8594; z0=1.45, z1=-1.05</title>
+  </g>
+  <g class="active" stroke="#E59926" fill="#E59926">
+   <use xlink:href="#tran" transform="translate(1575,-2735)"/>
+   <use xlink:href="#tran" transform="translate(2827,1144)"/>
+   <use xlink:href="#tran" transform="translate(1575,1144)"/>
+   <use xlink:href="#orig" transform="translate(150,-900)"/>
+   <title>u1=0.15, u2=0.90 &#8594; z0=1.58, z1=-1.14</title>
+  </g>
+  <g class="active" stroke="#E59919" fill="#E59919">
+   <use xlink:href="#tran" transform="translate(1736,-2708)"/>
+   <use xlink:href="#tran" transform="translate(2800,1261)"/>
+   <use xlink:href="#tran" transform="translate(1736,1261)"/>
+   <use xlink:href="#orig" transform="translate(100,-900)"/>
+   <title>u1=0.10, u2=0.90 &#8594; z0=1.74, z1=-1.26</title>
+  </g>
+  <g class="active" stroke="#E5990C" fill="#E5990C">
+   <use xlink:href="#tran" transform="translate(1980,-2676)"/>
+   <use xlink:href="#tran" transform="translate(2761,1438)"/>
+   <use xlink:href="#tran" transform="translate(1980,1438)"/>
+   <use xlink:href="#orig" transform="translate(50,-900)"/>
+   <title>u1=0.05, u2=0.90 &#8594; z0=1.98, z1=-1.44</title>
+  </g>
+  <g class="active" stroke="#D800FF" fill="#D800FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-850)"/>
+   <title>u1=1.00, u2=0.85 &#8594; z0=-0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#D800F2" fill="#D800F2">
+   <use xlink:href="#tran" transform="translate(188,-3011)"/>
+   <use xlink:href="#tran" transform="translate(3005,259)"/>
+   <use xlink:href="#tran" transform="translate(188,259)"/>
+   <use xlink:href="#orig" transform="translate(950,-850)"/>
+   <title>u1=0.95, u2=0.85 &#8594; z0=0.19, z1=-0.26</title>
+  </g>
+  <g class="active" stroke="#D800E5" fill="#D800E5">
+   <use xlink:href="#tran" transform="translate(269,-3004)"/>
+   <use xlink:href="#tran" transform="translate(2992,371)"/>
+   <use xlink:href="#tran" transform="translate(269,371)"/>
+   <use xlink:href="#orig" transform="translate(900,-850)"/>
+   <title>u1=0.90, u2=0.85 &#8594; z0=0.27, z1=-0.37</title>
+  </g>
+  <g class="active" stroke="#D800D8" fill="#D800D8">
+   <use xlink:href="#tran" transform="translate(335,-2997)"/>
+   <use xlink:href="#tran" transform="translate(2978,461)"/>
+   <use xlink:href="#tran" transform="translate(335,461)"/>
+   <use xlink:href="#orig" transform="translate(850,-850)"/>
+   <title>u1=0.85, u2=0.85 &#8594; z0=0.34, z1=-0.46</title>
+  </g>
+  <g class="active" stroke="#D800CC" fill="#D800CC">
+   <use xlink:href="#tran" transform="translate(392,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2964,540)"/>
+   <use xlink:href="#tran" transform="translate(392,540)"/>
+   <use xlink:href="#orig" transform="translate(800,-850)"/>
+   <title>u1=0.80, u2=0.85 &#8594; z0=0.39, z1=-0.54</title>
+  </g>
+  <g class="active" stroke="#D800BF" fill="#D800BF">
+   <use xlink:href="#tran" transform="translate(445,-2981)"/>
+   <use xlink:href="#tran" transform="translate(2950,613)"/>
+   <use xlink:href="#tran" transform="translate(445,613)"/>
+   <use xlink:href="#orig" transform="translate(750,-850)"/>
+   <title>u1=0.75, u2=0.85 &#8594; z0=0.45, z1=-0.61</title>
+  </g>
+  <g class="active" stroke="#D800B2" fill="#D800B2">
+   <use xlink:href="#tran" transform="translate(496,-2972)"/>
+   <use xlink:href="#tran" transform="translate(2935,683)"/>
+   <use xlink:href="#tran" transform="translate(496,683)"/>
+   <use xlink:href="#orig" transform="translate(700,-850)"/>
+   <title>u1=0.70, u2=0.85 &#8594; z0=0.50, z1=-0.68</title>
+  </g>
+  <g class="active" stroke="#D800A5" fill="#D800A5">
+   <use xlink:href="#tran" transform="translate(545,-2963)"/>
+   <use xlink:href="#tran" transform="translate(2920,750)"/>
+   <use xlink:href="#tran" transform="translate(545,750)"/>
+   <use xlink:href="#orig" transform="translate(650,-850)"/>
+   <title>u1=0.65, u2=0.85 &#8594; z0=0.55, z1=-0.75</title>
+  </g>
+  <g class="active" stroke="#D89999" fill="#D89999">
+   <use xlink:href="#tran" transform="translate(594,-2954)"/>
+   <use xlink:href="#tran" transform="translate(2905,817)"/>
+   <use xlink:href="#tran" transform="translate(594,817)"/>
+   <use xlink:href="#orig" transform="translate(600,-850)"/>
+   <title>u1=0.60, u2=0.85 &#8594; z0=0.59, z1=-0.82</title>
+  </g>
+  <g class="active" stroke="#D8998C" fill="#D8998C">
+   <use xlink:href="#tran" transform="translate(642,-2944)"/>
+   <use xlink:href="#tran" transform="translate(2889,884)"/>
+   <use xlink:href="#tran" transform="translate(642,884)"/>
+   <use xlink:href="#orig" transform="translate(550,-850)"/>
+   <title>u1=0.55, u2=0.85 &#8594; z0=0.64, z1=-0.88</title>
+  </g>
+  <g class="active" stroke="#D8997F" fill="#D8997F">
+   <use xlink:href="#tran" transform="translate(692,-2933)"/>
+   <use xlink:href="#tran" transform="translate(2873,952)"/>
+   <use xlink:href="#tran" transform="translate(692,952)"/>
+   <use xlink:href="#orig" transform="translate(500,-850)"/>
+   <title>u1=0.50, u2=0.85 &#8594; z0=0.69, z1=-0.95</title>
+  </g>
+  <g class="active" stroke="#D89972" fill="#D89972">
+   <use xlink:href="#tran" transform="translate(742,-2922)"/>
+   <use xlink:href="#tran" transform="translate(2856,1022)"/>
+   <use xlink:href="#tran" transform="translate(742,1022)"/>
+   <use xlink:href="#orig" transform="translate(450,-850)"/>
+   <title>u1=0.45, u2=0.85 &#8594; z0=0.74, z1=-1.02</title>
+  </g>
+  <g class="active" stroke="#D89966" fill="#D89966">
+   <use xlink:href="#tran" transform="translate(795,-2910)"/>
+   <use xlink:href="#tran" transform="translate(2839,1095)"/>
+   <use xlink:href="#tran" transform="translate(795,1095)"/>
+   <use xlink:href="#orig" transform="translate(400,-850)"/>
+   <title>u1=0.40, u2=0.85 &#8594; z0=0.80, z1=-1.10</title>
+  </g>
+  <g class="active" stroke="#D89959" fill="#D89959">
+   <use xlink:href="#tran" transform="translate(851,-2897)"/>
+   <use xlink:href="#tran" transform="translate(2820,1172)"/>
+   <use xlink:href="#tran" transform="translate(851,1172)"/>
+   <use xlink:href="#orig" transform="translate(350,-850)"/>
+   <title>u1=0.35, u2=0.85 &#8594; z0=0.85, z1=-1.17</title>
+  </g>
+  <g class="active" stroke="#D8994C" fill="#D8994C">
+   <use xlink:href="#tran" transform="translate(912,-2883)"/>
+   <use xlink:href="#tran" transform="translate(2801,1255)"/>
+   <use xlink:href="#tran" transform="translate(912,1255)"/>
+   <use xlink:href="#orig" transform="translate(300,-850)"/>
+   <title>u1=0.30, u2=0.85 &#8594; z0=0.91, z1=-1.26</title>
+  </g>
+  <g class="active" stroke="#D8993F" fill="#D8993F">
+   <use xlink:href="#tran" transform="translate(978,-2867)"/>
+   <use xlink:href="#tran" transform="translate(2781,1347)"/>
+   <use xlink:href="#tran" transform="translate(978,1347)"/>
+   <use xlink:href="#orig" transform="translate(250,-850)"/>
+   <title>u1=0.25, u2=0.85 &#8594; z0=0.98, z1=-1.35</title>
+  </g>
+  <g class="active" stroke="#D89933" fill="#D89933">
+   <use xlink:href="#tran" transform="translate(1054,-2848)"/>
+   <use xlink:href="#tran" transform="translate(2759,1451)"/>
+   <use xlink:href="#tran" transform="translate(1054,1451)"/>
+   <use xlink:href="#orig" transform="translate(200,-850)"/>
+   <title>u1=0.20, u2=0.85 &#8594; z0=1.05, z1=-1.45</title>
+  </g>
+  <g class="active" stroke="#D89926" fill="#D89926">
+   <use xlink:href="#tran" transform="translate(1144,-2827)"/>
+   <use xlink:href="#tran" transform="translate(2735,1575)"/>
+   <use xlink:href="#tran" transform="translate(1144,1575)"/>
+   <use xlink:href="#orig" transform="translate(150,-850)"/>
+   <title>u1=0.15, u2=0.85 &#8594; z0=1.14, z1=-1.58</title>
+  </g>
+  <g class="active" stroke="#D89919" fill="#D89919">
+   <use xlink:href="#tran" transform="translate(1261,-2800)"/>
+   <use xlink:href="#tran" transform="translate(2708,1736)"/>
+   <use xlink:href="#tran" transform="translate(1261,1736)"/>
+   <use xlink:href="#orig" transform="translate(100,-850)"/>
+   <title>u1=0.10, u2=0.85 &#8594; z0=1.26, z1=-1.74</title>
+  </g>
+  <g class="active" stroke="#D8990C" fill="#D8990C">
+   <use xlink:href="#tran" transform="translate(1438,-2761)"/>
+   <use xlink:href="#tran" transform="translate(2676,1980)"/>
+   <use xlink:href="#tran" transform="translate(1438,1980)"/>
+   <use xlink:href="#orig" transform="translate(50,-850)"/>
+   <title>u1=0.05, u2=0.85 &#8594; z0=1.44, z1=-1.98</title>
+  </g>
+  <g class="active" stroke="#CC00FF" fill="#CC00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-800)"/>
+   <title>u1=1.00, u2=0.80 &#8594; z0=-0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#CC00F2" fill="#CC00F2">
+   <use xlink:href="#tran" transform="translate(98,-3016)"/>
+   <use xlink:href="#tran" transform="translate(3000,304)"/>
+   <use xlink:href="#tran" transform="translate(98,304)"/>
+   <use xlink:href="#orig" transform="translate(950,-800)"/>
+   <title>u1=0.95, u2=0.80 &#8594; z0=0.10, z1=-0.30</title>
+  </g>
+  <g class="active" stroke="#CC00E5" fill="#CC00E5">
+   <use xlink:href="#tran" transform="translate(141,-3014)"/>
+   <use xlink:href="#tran" transform="translate(2982,436)"/>
+   <use xlink:href="#tran" transform="translate(141,436)"/>
+   <use xlink:href="#orig" transform="translate(900,-800)"/>
+   <title>u1=0.90, u2=0.80 &#8594; z0=0.14, z1=-0.44</title>
+  </g>
+  <g class="active" stroke="#CC00D8" fill="#CC00D8">
+   <use xlink:href="#tran" transform="translate(176,-3012)"/>
+   <use xlink:href="#tran" transform="translate(2964,542)"/>
+   <use xlink:href="#tran" transform="translate(176,542)"/>
+   <use xlink:href="#orig" transform="translate(850,-800)"/>
+   <title>u1=0.85, u2=0.80 &#8594; z0=0.18, z1=-0.54</title>
+  </g>
+  <g class="active" stroke="#CC00CC" fill="#CC00CC">
+   <use xlink:href="#tran" transform="translate(206,-3010)"/>
+   <use xlink:href="#tran" transform="translate(2946,635)"/>
+   <use xlink:href="#tran" transform="translate(206,635)"/>
+   <use xlink:href="#orig" transform="translate(800,-800)"/>
+   <title>u1=0.80, u2=0.80 &#8594; z0=0.21, z1=-0.64</title>
+  </g>
+  <g class="active" stroke="#CC00BF" fill="#CC00BF">
+   <use xlink:href="#tran" transform="translate(234,-3008)"/>
+   <use xlink:href="#tran" transform="translate(2927,721)"/>
+   <use xlink:href="#tran" transform="translate(234,721)"/>
+   <use xlink:href="#orig" transform="translate(750,-800)"/>
+   <title>u1=0.75, u2=0.80 &#8594; z0=0.23, z1=-0.72</title>
+  </g>
+  <g class="active" stroke="#CC00B2" fill="#CC00B2">
+   <use xlink:href="#tran" transform="translate(260,-3005)"/>
+   <use xlink:href="#tran" transform="translate(2908,803)"/>
+   <use xlink:href="#tran" transform="translate(260,803)"/>
+   <use xlink:href="#orig" transform="translate(700,-800)"/>
+   <title>u1=0.70, u2=0.80 &#8594; z0=0.26, z1=-0.80</title>
+  </g>
+  <g class="active" stroke="#CC00A5" fill="#CC00A5">
+   <use xlink:href="#tran" transform="translate(286,-3002)"/>
+   <use xlink:href="#tran" transform="translate(2890,882)"/>
+   <use xlink:href="#tran" transform="translate(286,882)"/>
+   <use xlink:href="#orig" transform="translate(650,-800)"/>
+   <title>u1=0.65, u2=0.80 &#8594; z0=0.29, z1=-0.88</title>
+  </g>
+  <g class="active" stroke="#CC9999" fill="#CC9999">
+   <use xlink:href="#tran" transform="translate(312,-2999)"/>
+   <use xlink:href="#tran" transform="translate(2871,961)"/>
+   <use xlink:href="#tran" transform="translate(312,961)"/>
+   <use xlink:href="#orig" transform="translate(600,-800)"/>
+   <title>u1=0.60, u2=0.80 &#8594; z0=0.31, z1=-0.96</title>
+  </g>
+  <g class="active" stroke="#CC998C" fill="#CC998C">
+   <use xlink:href="#tran" transform="translate(337,-2996)"/>
+   <use xlink:href="#tran" transform="translate(2852,1039)"/>
+   <use xlink:href="#tran" transform="translate(337,1039)"/>
+   <use xlink:href="#orig" transform="translate(550,-800)"/>
+   <title>u1=0.55, u2=0.80 &#8594; z0=0.34, z1=-1.04</title>
+  </g>
+  <g class="active" stroke="#CC997F" fill="#CC997F">
+   <use xlink:href="#tran" transform="translate(363,-2993)"/>
+   <use xlink:href="#tran" transform="translate(2833,1119)"/>
+   <use xlink:href="#tran" transform="translate(363,1119)"/>
+   <use xlink:href="#orig" transform="translate(500,-800)"/>
+   <title>u1=0.50, u2=0.80 &#8594; z0=0.36, z1=-1.12</title>
+  </g>
+  <g class="active" stroke="#CC9972" fill="#CC9972">
+   <use xlink:href="#tran" transform="translate(390,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2813,1201)"/>
+   <use xlink:href="#tran" transform="translate(390,1201)"/>
+   <use xlink:href="#orig" transform="translate(450,-800)"/>
+   <title>u1=0.45, u2=0.80 &#8594; z0=0.39, z1=-1.20</title>
+  </g>
+  <g class="active" stroke="#CC9966" fill="#CC9966">
+   <use xlink:href="#tran" transform="translate(418,-2985)"/>
+   <use xlink:href="#tran" transform="translate(2794,1287)"/>
+   <use xlink:href="#tran" transform="translate(418,1287)"/>
+   <use xlink:href="#orig" transform="translate(400,-800)"/>
+   <title>u1=0.40, u2=0.80 &#8594; z0=0.42, z1=-1.29</title>
+  </g>
+  <g class="active" stroke="#CC9959" fill="#CC9959">
+   <use xlink:href="#tran" transform="translate(447,-2980)"/>
+   <use xlink:href="#tran" transform="translate(2774,1378)"/>
+   <use xlink:href="#tran" transform="translate(447,1378)"/>
+   <use xlink:href="#orig" transform="translate(350,-800)"/>
+   <title>u1=0.35, u2=0.80 &#8594; z0=0.45, z1=-1.38</title>
+  </g>
+  <g class="active" stroke="#CC994C" fill="#CC994C">
+   <use xlink:href="#tran" transform="translate(479,-2975)"/>
+   <use xlink:href="#tran" transform="translate(2754,1475)"/>
+   <use xlink:href="#tran" transform="translate(479,1475)"/>
+   <use xlink:href="#orig" transform="translate(300,-800)"/>
+   <title>u1=0.30, u2=0.80 &#8594; z0=0.48, z1=-1.48</title>
+  </g>
+  <g class="active" stroke="#CC993F" fill="#CC993F">
+   <use xlink:href="#tran" transform="translate(514,-2969)"/>
+   <use xlink:href="#tran" transform="translate(2733,1583)"/>
+   <use xlink:href="#tran" transform="translate(514,1583)"/>
+   <use xlink:href="#orig" transform="translate(250,-800)"/>
+   <title>u1=0.25, u2=0.80 &#8594; z0=0.51, z1=-1.58</title>
+  </g>
+  <g class="active" stroke="#CC9933" fill="#CC9933">
+   <use xlink:href="#tran" transform="translate(554,-2962)"/>
+   <use xlink:href="#tran" transform="translate(2713,1706)"/>
+   <use xlink:href="#tran" transform="translate(554,1706)"/>
+   <use xlink:href="#orig" transform="translate(200,-800)"/>
+   <title>u1=0.20, u2=0.80 &#8594; z0=0.55, z1=-1.71</title>
+  </g>
+  <g class="active" stroke="#CC9926" fill="#CC9926">
+   <use xlink:href="#tran" transform="translate(601,-2952)"/>
+   <use xlink:href="#tran" transform="translate(2691,1852)"/>
+   <use xlink:href="#tran" transform="translate(601,1852)"/>
+   <use xlink:href="#orig" transform="translate(150,-800)"/>
+   <title>u1=0.15, u2=0.80 &#8594; z0=0.60, z1=-1.85</title>
+  </g>
+  <g class="active" stroke="#CC9919" fill="#CC9919">
+   <use xlink:href="#tran" transform="translate(663,-2940)"/>
+   <use xlink:href="#tran" transform="translate(2669,2040)"/>
+   <use xlink:href="#tran" transform="translate(663,2040)"/>
+   <use xlink:href="#orig" transform="translate(100,-800)"/>
+   <title>u1=0.10, u2=0.80 &#8594; z0=0.66, z1=-2.04</title>
+  </g>
+  <g class="active" stroke="#CC990C" fill="#CC990C">
+   <use xlink:href="#tran" transform="translate(756,-2919)"/>
+   <use xlink:href="#tran" transform="translate(2646,2327)"/>
+   <use xlink:href="#tran" transform="translate(756,2327)"/>
+   <use xlink:href="#orig" transform="translate(50,-800)"/>
+   <title>u1=0.05, u2=0.80 &#8594; z0=0.76, z1=-2.33</title>
+  </g>
+  <g class="active" stroke="#BF00FF" fill="#BF00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-750)"/>
+   <title>u1=1.00, u2=0.75 &#8594; z0=0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#BF00F2" fill="#BF00F2">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2998,320)"/>
+   <use xlink:href="#tran" transform="translate(0,320)"/>
+   <use xlink:href="#orig" transform="translate(950,-750)"/>
+   <title>u1=0.95, u2=0.75 &#8594; z0=-0.00, z1=-0.32</title>
+  </g>
+  <g class="active" stroke="#BF00E5" fill="#BF00E5">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2979,459)"/>
+   <use xlink:href="#tran" transform="translate(0,459)"/>
+   <use xlink:href="#orig" transform="translate(900,-750)"/>
+   <title>u1=0.90, u2=0.75 &#8594; z0=-0.00, z1=-0.46</title>
+  </g>
+  <g class="active" stroke="#BF00D8" fill="#BF00D8">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2959,570)"/>
+   <use xlink:href="#tran" transform="translate(0,570)"/>
+   <use xlink:href="#orig" transform="translate(850,-750)"/>
+   <title>u1=0.85, u2=0.75 &#8594; z0=-0.00, z1=-0.57</title>
+  </g>
+  <g class="active" stroke="#BF00CC" fill="#BF00CC">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2939,668)"/>
+   <use xlink:href="#tran" transform="translate(0,668)"/>
+   <use xlink:href="#orig" transform="translate(800,-750)"/>
+   <title>u1=0.80, u2=0.75 &#8594; z0=-0.00, z1=-0.67</title>
+  </g>
+  <g class="active" stroke="#BF00BF" fill="#BF00BF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2919,758)"/>
+   <use xlink:href="#tran" transform="translate(0,758)"/>
+   <use xlink:href="#orig" transform="translate(750,-750)"/>
+   <title>u1=0.75, u2=0.75 &#8594; z0=-0.00, z1=-0.76</title>
+  </g>
+  <g class="active" stroke="#BF00B2" fill="#BF00B2">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2899,844)"/>
+   <use xlink:href="#tran" transform="translate(0,844)"/>
+   <use xlink:href="#orig" transform="translate(700,-750)"/>
+   <title>u1=0.70, u2=0.75 &#8594; z0=-0.00, z1=-0.84</title>
+  </g>
+  <g class="active" stroke="#BF00A5" fill="#BF00A5">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2879,928)"/>
+   <use xlink:href="#tran" transform="translate(0,928)"/>
+   <use xlink:href="#orig" transform="translate(650,-750)"/>
+   <title>u1=0.65, u2=0.75 &#8594; z0=-0.00, z1=-0.93</title>
+  </g>
+  <g class="active" stroke="#BF9999" fill="#BF9999">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2859,1010)"/>
+   <use xlink:href="#tran" transform="translate(0,1010)"/>
+   <use xlink:href="#orig" transform="translate(600,-750)"/>
+   <title>u1=0.60, u2=0.75 &#8594; z0=-0.00, z1=-1.01</title>
+  </g>
+  <g class="active" stroke="#BF998C" fill="#BF998C">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2839,1093)"/>
+   <use xlink:href="#tran" transform="translate(0,1093)"/>
+   <use xlink:href="#orig" transform="translate(550,-750)"/>
+   <title>u1=0.55, u2=0.75 &#8594; z0=-0.00, z1=-1.09</title>
+  </g>
+  <g class="active" stroke="#BF997F" fill="#BF997F">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2819,1177)"/>
+   <use xlink:href="#tran" transform="translate(0,1177)"/>
+   <use xlink:href="#orig" transform="translate(500,-750)"/>
+   <title>u1=0.50, u2=0.75 &#8594; z0=-0.00, z1=-1.18</title>
+  </g>
+  <g class="active" stroke="#BF9972" fill="#BF9972">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2799,1263)"/>
+   <use xlink:href="#tran" transform="translate(0,1263)"/>
+   <use xlink:href="#orig" transform="translate(450,-750)"/>
+   <title>u1=0.45, u2=0.75 &#8594; z0=-0.00, z1=-1.26</title>
+  </g>
+  <g class="active" stroke="#BF9966" fill="#BF9966">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2779,1353)"/>
+   <use xlink:href="#tran" transform="translate(0,1353)"/>
+   <use xlink:href="#orig" transform="translate(400,-750)"/>
+   <title>u1=0.40, u2=0.75 &#8594; z0=-0.00, z1=-1.35</title>
+  </g>
+  <g class="active" stroke="#BF9959" fill="#BF9959">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2759,1449)"/>
+   <use xlink:href="#tran" transform="translate(0,1449)"/>
+   <use xlink:href="#orig" transform="translate(350,-750)"/>
+   <title>u1=0.35, u2=0.75 &#8594; z0=-0.00, z1=-1.45</title>
+  </g>
+  <g class="active" stroke="#BF994C" fill="#BF994C">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2739,1551)"/>
+   <use xlink:href="#tran" transform="translate(0,1551)"/>
+   <use xlink:href="#orig" transform="translate(300,-750)"/>
+   <title>u1=0.30, u2=0.75 &#8594; z0=-0.00, z1=-1.55</title>
+  </g>
+  <g class="active" stroke="#BF993F" fill="#BF993F">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2719,1665)"/>
+   <use xlink:href="#tran" transform="translate(0,1665)"/>
+   <use xlink:href="#orig" transform="translate(250,-750)"/>
+   <title>u1=0.25, u2=0.75 &#8594; z0=-0.00, z1=-1.67</title>
+  </g>
+  <g class="active" stroke="#BF9933" fill="#BF9933">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2699,1794)"/>
+   <use xlink:href="#tran" transform="translate(0,1794)"/>
+   <use xlink:href="#orig" transform="translate(200,-750)"/>
+   <title>u1=0.20, u2=0.75 &#8594; z0=-0.00, z1=-1.79</title>
+  </g>
+  <g class="active" stroke="#BF9926" fill="#BF9926">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2679,1947)"/>
+   <use xlink:href="#tran" transform="translate(0,1947)"/>
+   <use xlink:href="#orig" transform="translate(150,-750)"/>
+   <title>u1=0.15, u2=0.75 &#8594; z0=-0.00, z1=-1.95</title>
+  </g>
+  <g class="active" stroke="#BF9919" fill="#BF9919">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2659,2145)"/>
+   <use xlink:href="#tran" transform="translate(0,2145)"/>
+   <use xlink:href="#orig" transform="translate(100,-750)"/>
+   <title>u1=0.10, u2=0.75 &#8594; z0=-0.00, z1=-2.15</title>
+  </g>
+  <g class="active" stroke="#BF990C" fill="#BF990C">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2639,2447)"/>
+   <use xlink:href="#tran" transform="translate(0,2447)"/>
+   <use xlink:href="#orig" transform="translate(50,-750)"/>
+   <title>u1=0.05, u2=0.75 &#8594; z0=-0.00, z1=-2.45</title>
+  </g>
+  <g class="active" stroke="#B200FF" fill="#B200FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-700)"/>
+   <title>u1=1.00, u2=0.70 &#8594; z0=0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#B200F2" fill="#B200F2">
+   <use xlink:href="#tran" transform="translate(-98,-3016)"/>
+   <use xlink:href="#tran" transform="translate(3000,304)"/>
+   <use xlink:href="#tran" transform="translate(-98,304)"/>
+   <use xlink:href="#orig" transform="translate(950,-700)"/>
+   <title>u1=0.95, u2=0.70 &#8594; z0=-0.10, z1=-0.30</title>
+  </g>
+  <g class="active" stroke="#B200E5" fill="#B200E5">
+   <use xlink:href="#tran" transform="translate(-141,-3014)"/>
+   <use xlink:href="#tran" transform="translate(2982,436)"/>
+   <use xlink:href="#tran" transform="translate(-141,436)"/>
+   <use xlink:href="#orig" transform="translate(900,-700)"/>
+   <title>u1=0.90, u2=0.70 &#8594; z0=-0.14, z1=-0.44</title>
+  </g>
+  <g class="active" stroke="#B200D8" fill="#B200D8">
+   <use xlink:href="#tran" transform="translate(-176,-3012)"/>
+   <use xlink:href="#tran" transform="translate(2964,542)"/>
+   <use xlink:href="#tran" transform="translate(-176,542)"/>
+   <use xlink:href="#orig" transform="translate(850,-700)"/>
+   <title>u1=0.85, u2=0.70 &#8594; z0=-0.18, z1=-0.54</title>
+  </g>
+  <g class="active" stroke="#B200CC" fill="#B200CC">
+   <use xlink:href="#tran" transform="translate(-206,-3010)"/>
+   <use xlink:href="#tran" transform="translate(2946,635)"/>
+   <use xlink:href="#tran" transform="translate(-206,635)"/>
+   <use xlink:href="#orig" transform="translate(800,-700)"/>
+   <title>u1=0.80, u2=0.70 &#8594; z0=-0.21, z1=-0.64</title>
+  </g>
+  <g class="active" stroke="#B200BF" fill="#B200BF">
+   <use xlink:href="#tran" transform="translate(-234,-3008)"/>
+   <use xlink:href="#tran" transform="translate(2927,721)"/>
+   <use xlink:href="#tran" transform="translate(-234,721)"/>
+   <use xlink:href="#orig" transform="translate(750,-700)"/>
+   <title>u1=0.75, u2=0.70 &#8594; z0=-0.23, z1=-0.72</title>
+  </g>
+  <g class="active" stroke="#B200B2" fill="#B200B2">
+   <use xlink:href="#tran" transform="translate(-260,-3005)"/>
+   <use xlink:href="#tran" transform="translate(2908,803)"/>
+   <use xlink:href="#tran" transform="translate(-260,803)"/>
+   <use xlink:href="#orig" transform="translate(700,-700)"/>
+   <title>u1=0.70, u2=0.70 &#8594; z0=-0.26, z1=-0.80</title>
+  </g>
+  <g class="active" stroke="#B200A5" fill="#B200A5">
+   <use xlink:href="#tran" transform="translate(-286,-3002)"/>
+   <use xlink:href="#tran" transform="translate(2890,882)"/>
+   <use xlink:href="#tran" transform="translate(-286,882)"/>
+   <use xlink:href="#orig" transform="translate(650,-700)"/>
+   <title>u1=0.65, u2=0.70 &#8594; z0=-0.29, z1=-0.88</title>
+  </g>
+  <g class="active" stroke="#B29999" fill="#B29999">
+   <use xlink:href="#tran" transform="translate(-312,-2999)"/>
+   <use xlink:href="#tran" transform="translate(2871,961)"/>
+   <use xlink:href="#tran" transform="translate(-312,961)"/>
+   <use xlink:href="#orig" transform="translate(600,-700)"/>
+   <title>u1=0.60, u2=0.70 &#8594; z0=-0.31, z1=-0.96</title>
+  </g>
+  <g class="active" stroke="#B2998C" fill="#B2998C">
+   <use xlink:href="#tran" transform="translate(-337,-2996)"/>
+   <use xlink:href="#tran" transform="translate(2852,1039)"/>
+   <use xlink:href="#tran" transform="translate(-337,1039)"/>
+   <use xlink:href="#orig" transform="translate(550,-700)"/>
+   <title>u1=0.55, u2=0.70 &#8594; z0=-0.34, z1=-1.04</title>
+  </g>
+  <g class="active" stroke="#B2997F" fill="#B2997F">
+   <use xlink:href="#tran" transform="translate(-363,-2993)"/>
+   <use xlink:href="#tran" transform="translate(2833,1119)"/>
+   <use xlink:href="#tran" transform="translate(-363,1119)"/>
+   <use xlink:href="#orig" transform="translate(500,-700)"/>
+   <title>u1=0.50, u2=0.70 &#8594; z0=-0.36, z1=-1.12</title>
+  </g>
+  <g class="active" stroke="#B29972" fill="#B29972">
+   <use xlink:href="#tran" transform="translate(-390,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2813,1201)"/>
+   <use xlink:href="#tran" transform="translate(-390,1201)"/>
+   <use xlink:href="#orig" transform="translate(450,-700)"/>
+   <title>u1=0.45, u2=0.70 &#8594; z0=-0.39, z1=-1.20</title>
+  </g>
+  <g class="active" stroke="#B29966" fill="#B29966">
+   <use xlink:href="#tran" transform="translate(-418,-2985)"/>
+   <use xlink:href="#tran" transform="translate(2794,1287)"/>
+   <use xlink:href="#tran" transform="translate(-418,1287)"/>
+   <use xlink:href="#orig" transform="translate(400,-700)"/>
+   <title>u1=0.40, u2=0.70 &#8594; z0=-0.42, z1=-1.29</title>
+  </g>
+  <g class="active" stroke="#B29959" fill="#B29959">
+   <use xlink:href="#tran" transform="translate(-447,-2980)"/>
+   <use xlink:href="#tran" transform="translate(2774,1378)"/>
+   <use xlink:href="#tran" transform="translate(-447,1378)"/>
+   <use xlink:href="#orig" transform="translate(350,-700)"/>
+   <title>u1=0.35, u2=0.70 &#8594; z0=-0.45, z1=-1.38</title>
+  </g>
+  <g class="active" stroke="#B2994C" fill="#B2994C">
+   <use xlink:href="#tran" transform="translate(-479,-2975)"/>
+   <use xlink:href="#tran" transform="translate(2754,1475)"/>
+   <use xlink:href="#tran" transform="translate(-479,1475)"/>
+   <use xlink:href="#orig" transform="translate(300,-700)"/>
+   <title>u1=0.30, u2=0.70 &#8594; z0=-0.48, z1=-1.48</title>
+  </g>
+  <g class="active" stroke="#B2993F" fill="#B2993F">
+   <use xlink:href="#tran" transform="translate(-514,-2969)"/>
+   <use xlink:href="#tran" transform="translate(2733,1583)"/>
+   <use xlink:href="#tran" transform="translate(-514,1583)"/>
+   <use xlink:href="#orig" transform="translate(250,-700)"/>
+   <title>u1=0.25, u2=0.70 &#8594; z0=-0.51, z1=-1.58</title>
+  </g>
+  <g class="active" stroke="#B29933" fill="#B29933">
+   <use xlink:href="#tran" transform="translate(-554,-2962)"/>
+   <use xlink:href="#tran" transform="translate(2713,1706)"/>
+   <use xlink:href="#tran" transform="translate(-554,1706)"/>
+   <use xlink:href="#orig" transform="translate(200,-700)"/>
+   <title>u1=0.20, u2=0.70 &#8594; z0=-0.55, z1=-1.71</title>
+  </g>
+  <g class="active" stroke="#B29926" fill="#B29926">
+   <use xlink:href="#tran" transform="translate(-601,-2952)"/>
+   <use xlink:href="#tran" transform="translate(2691,1852)"/>
+   <use xlink:href="#tran" transform="translate(-601,1852)"/>
+   <use xlink:href="#orig" transform="translate(150,-700)"/>
+   <title>u1=0.15, u2=0.70 &#8594; z0=-0.60, z1=-1.85</title>
+  </g>
+  <g class="active" stroke="#B29919" fill="#B29919">
+   <use xlink:href="#tran" transform="translate(-663,-2940)"/>
+   <use xlink:href="#tran" transform="translate(2669,2040)"/>
+   <use xlink:href="#tran" transform="translate(-663,2040)"/>
+   <use xlink:href="#orig" transform="translate(100,-700)"/>
+   <title>u1=0.10, u2=0.70 &#8594; z0=-0.66, z1=-2.04</title>
+  </g>
+  <g class="active" stroke="#B2990C" fill="#B2990C">
+   <use xlink:href="#tran" transform="translate(-756,-2919)"/>
+   <use xlink:href="#tran" transform="translate(2646,2327)"/>
+   <use xlink:href="#tran" transform="translate(-756,2327)"/>
+   <use xlink:href="#orig" transform="translate(50,-700)"/>
+   <title>u1=0.05, u2=0.70 &#8594; z0=-0.76, z1=-2.33</title>
+  </g>
+  <g class="active" stroke="#A500FF" fill="#A500FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-650)"/>
+   <title>u1=1.00, u2=0.65 &#8594; z0=0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#A500F2" fill="#A500F2">
+   <use xlink:href="#tran" transform="translate(-188,-3011)"/>
+   <use xlink:href="#tran" transform="translate(3005,259)"/>
+   <use xlink:href="#tran" transform="translate(-188,259)"/>
+   <use xlink:href="#orig" transform="translate(950,-650)"/>
+   <title>u1=0.95, u2=0.65 &#8594; z0=-0.19, z1=-0.26</title>
+  </g>
+  <g class="active" stroke="#A500E5" fill="#A500E5">
+   <use xlink:href="#tran" transform="translate(-269,-3004)"/>
+   <use xlink:href="#tran" transform="translate(2992,371)"/>
+   <use xlink:href="#tran" transform="translate(-269,371)"/>
+   <use xlink:href="#orig" transform="translate(900,-650)"/>
+   <title>u1=0.90, u2=0.65 &#8594; z0=-0.27, z1=-0.37</title>
+  </g>
+  <g class="active" stroke="#A500D8" fill="#A500D8">
+   <use xlink:href="#tran" transform="translate(-335,-2997)"/>
+   <use xlink:href="#tran" transform="translate(2978,461)"/>
+   <use xlink:href="#tran" transform="translate(-335,461)"/>
+   <use xlink:href="#orig" transform="translate(850,-650)"/>
+   <title>u1=0.85, u2=0.65 &#8594; z0=-0.34, z1=-0.46</title>
+  </g>
+  <g class="active" stroke="#A500CC" fill="#A500CC">
+   <use xlink:href="#tran" transform="translate(-392,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2964,540)"/>
+   <use xlink:href="#tran" transform="translate(-392,540)"/>
+   <use xlink:href="#orig" transform="translate(800,-650)"/>
+   <title>u1=0.80, u2=0.65 &#8594; z0=-0.39, z1=-0.54</title>
+  </g>
+  <g class="active" stroke="#A500BF" fill="#A500BF">
+   <use xlink:href="#tran" transform="translate(-445,-2981)"/>
+   <use xlink:href="#tran" transform="translate(2950,613)"/>
+   <use xlink:href="#tran" transform="translate(-445,613)"/>
+   <use xlink:href="#orig" transform="translate(750,-650)"/>
+   <title>u1=0.75, u2=0.65 &#8594; z0=-0.45, z1=-0.61</title>
+  </g>
+  <g class="active" stroke="#A500B2" fill="#A500B2">
+   <use xlink:href="#tran" transform="translate(-496,-2972)"/>
+   <use xlink:href="#tran" transform="translate(2935,683)"/>
+   <use xlink:href="#tran" transform="translate(-496,683)"/>
+   <use xlink:href="#orig" transform="translate(700,-650)"/>
+   <title>u1=0.70, u2=0.65 &#8594; z0=-0.50, z1=-0.68</title>
+  </g>
+  <g class="active" stroke="#A500A5" fill="#A500A5">
+   <use xlink:href="#tran" transform="translate(-545,-2963)"/>
+   <use xlink:href="#tran" transform="translate(2920,750)"/>
+   <use xlink:href="#tran" transform="translate(-545,750)"/>
+   <use xlink:href="#orig" transform="translate(650,-650)"/>
+   <title>u1=0.65, u2=0.65 &#8594; z0=-0.55, z1=-0.75</title>
+  </g>
+  <g class="active" stroke="#A59999" fill="#A59999">
+   <use xlink:href="#tran" transform="translate(-594,-2954)"/>
+   <use xlink:href="#tran" transform="translate(2905,817)"/>
+   <use xlink:href="#tran" transform="translate(-594,817)"/>
+   <use xlink:href="#orig" transform="translate(600,-650)"/>
+   <title>u1=0.60, u2=0.65 &#8594; z0=-0.59, z1=-0.82</title>
+  </g>
+  <g class="active" stroke="#A5998C" fill="#A5998C">
+   <use xlink:href="#tran" transform="translate(-642,-2944)"/>
+   <use xlink:href="#tran" transform="translate(2889,884)"/>
+   <use xlink:href="#tran" transform="translate(-642,884)"/>
+   <use xlink:href="#orig" transform="translate(550,-650)"/>
+   <title>u1=0.55, u2=0.65 &#8594; z0=-0.64, z1=-0.88</title>
+  </g>
+  <g class="active" stroke="#A5997F" fill="#A5997F">
+   <use xlink:href="#tran" transform="translate(-692,-2933)"/>
+   <use xlink:href="#tran" transform="translate(2873,952)"/>
+   <use xlink:href="#tran" transform="translate(-692,952)"/>
+   <use xlink:href="#orig" transform="translate(500,-650)"/>
+   <title>u1=0.50, u2=0.65 &#8594; z0=-0.69, z1=-0.95</title>
+  </g>
+  <g class="active" stroke="#A59972" fill="#A59972">
+   <use xlink:href="#tran" transform="translate(-742,-2922)"/>
+   <use xlink:href="#tran" transform="translate(2856,1022)"/>
+   <use xlink:href="#tran" transform="translate(-742,1022)"/>
+   <use xlink:href="#orig" transform="translate(450,-650)"/>
+   <title>u1=0.45, u2=0.65 &#8594; z0=-0.74, z1=-1.02</title>
+  </g>
+  <g class="active" stroke="#A59966" fill="#A59966">
+   <use xlink:href="#tran" transform="translate(-795,-2910)"/>
+   <use xlink:href="#tran" transform="translate(2839,1095)"/>
+   <use xlink:href="#tran" transform="translate(-795,1095)"/>
+   <use xlink:href="#orig" transform="translate(400,-650)"/>
+   <title>u1=0.40, u2=0.65 &#8594; z0=-0.80, z1=-1.10</title>
+  </g>
+  <g class="active" stroke="#A59959" fill="#A59959">
+   <use xlink:href="#tran" transform="translate(-851,-2897)"/>
+   <use xlink:href="#tran" transform="translate(2820,1172)"/>
+   <use xlink:href="#tran" transform="translate(-851,1172)"/>
+   <use xlink:href="#orig" transform="translate(350,-650)"/>
+   <title>u1=0.35, u2=0.65 &#8594; z0=-0.85, z1=-1.17</title>
+  </g>
+  <g class="active" stroke="#A5994C" fill="#A5994C">
+   <use xlink:href="#tran" transform="translate(-912,-2883)"/>
+   <use xlink:href="#tran" transform="translate(2801,1255)"/>
+   <use xlink:href="#tran" transform="translate(-912,1255)"/>
+   <use xlink:href="#orig" transform="translate(300,-650)"/>
+   <title>u1=0.30, u2=0.65 &#8594; z0=-0.91, z1=-1.26</title>
+  </g>
+  <g class="active" stroke="#A5993F" fill="#A5993F">
+   <use xlink:href="#tran" transform="translate(-978,-2867)"/>
+   <use xlink:href="#tran" transform="translate(2781,1347)"/>
+   <use xlink:href="#tran" transform="translate(-978,1347)"/>
+   <use xlink:href="#orig" transform="translate(250,-650)"/>
+   <title>u1=0.25, u2=0.65 &#8594; z0=-0.98, z1=-1.35</title>
+  </g>
+  <g class="active" stroke="#A59933" fill="#A59933">
+   <use xlink:href="#tran" transform="translate(-1054,-2848)"/>
+   <use xlink:href="#tran" transform="translate(2759,1451)"/>
+   <use xlink:href="#tran" transform="translate(-1054,1451)"/>
+   <use xlink:href="#orig" transform="translate(200,-650)"/>
+   <title>u1=0.20, u2=0.65 &#8594; z0=-1.05, z1=-1.45</title>
+  </g>
+  <g class="active" stroke="#A59926" fill="#A59926">
+   <use xlink:href="#tran" transform="translate(-1144,-2827)"/>
+   <use xlink:href="#tran" transform="translate(2735,1575)"/>
+   <use xlink:href="#tran" transform="translate(-1144,1575)"/>
+   <use xlink:href="#orig" transform="translate(150,-650)"/>
+   <title>u1=0.15, u2=0.65 &#8594; z0=-1.14, z1=-1.58</title>
+  </g>
+  <g class="active" stroke="#A59919" fill="#A59919">
+   <use xlink:href="#tran" transform="translate(-1261,-2800)"/>
+   <use xlink:href="#tran" transform="translate(2708,1736)"/>
+   <use xlink:href="#tran" transform="translate(-1261,1736)"/>
+   <use xlink:href="#orig" transform="translate(100,-650)"/>
+   <title>u1=0.10, u2=0.65 &#8594; z0=-1.26, z1=-1.74</title>
+  </g>
+  <g class="active" stroke="#A5990C" fill="#A5990C">
+   <use xlink:href="#tran" transform="translate(-1438,-2761)"/>
+   <use xlink:href="#tran" transform="translate(2676,1980)"/>
+   <use xlink:href="#tran" transform="translate(-1438,1980)"/>
+   <use xlink:href="#orig" transform="translate(50,-650)"/>
+   <title>u1=0.05, u2=0.65 &#8594; z0=-1.44, z1=-1.98</title>
+  </g>
+  <g class="active" stroke="#9900FF" fill="#9900FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-600)"/>
+   <title>u1=1.00, u2=0.60 &#8594; z0=0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#9900F2" fill="#9900F2">
+   <use xlink:href="#tran" transform="translate(-259,-3005)"/>
+   <use xlink:href="#tran" transform="translate(3011,188)"/>
+   <use xlink:href="#tran" transform="translate(-259,188)"/>
+   <use xlink:href="#orig" transform="translate(950,-600)"/>
+   <title>u1=0.95, u2=0.60 &#8594; z0=-0.26, z1=-0.19</title>
+  </g>
+  <g class="active" stroke="#9900E5" fill="#9900E5">
+   <use xlink:href="#tran" transform="translate(-371,-2992)"/>
+   <use xlink:href="#tran" transform="translate(3004,269)"/>
+   <use xlink:href="#tran" transform="translate(-371,269)"/>
+   <use xlink:href="#orig" transform="translate(900,-600)"/>
+   <title>u1=0.90, u2=0.60 &#8594; z0=-0.37, z1=-0.27</title>
+  </g>
+  <g class="active" stroke="#9900D8" fill="#9900D8">
+   <use xlink:href="#tran" transform="translate(-461,-2978)"/>
+   <use xlink:href="#tran" transform="translate(2997,335)"/>
+   <use xlink:href="#tran" transform="translate(-461,335)"/>
+   <use xlink:href="#orig" transform="translate(850,-600)"/>
+   <title>u1=0.85, u2=0.60 &#8594; z0=-0.46, z1=-0.34</title>
+  </g>
+  <g class="active" stroke="#9900CC" fill="#9900CC">
+   <use xlink:href="#tran" transform="translate(-540,-2964)"/>
+   <use xlink:href="#tran" transform="translate(2989,392)"/>
+   <use xlink:href="#tran" transform="translate(-540,392)"/>
+   <use xlink:href="#orig" transform="translate(800,-600)"/>
+   <title>u1=0.80, u2=0.60 &#8594; z0=-0.54, z1=-0.39</title>
+  </g>
+  <g class="active" stroke="#9900BF" fill="#9900BF">
+   <use xlink:href="#tran" transform="translate(-613,-2950)"/>
+   <use xlink:href="#tran" transform="translate(2981,445)"/>
+   <use xlink:href="#tran" transform="translate(-613,445)"/>
+   <use xlink:href="#orig" transform="translate(750,-600)"/>
+   <title>u1=0.75, u2=0.60 &#8594; z0=-0.61, z1=-0.45</title>
+  </g>
+  <g class="active" stroke="#9900B2" fill="#9900B2">
+   <use xlink:href="#tran" transform="translate(-683,-2935)"/>
+   <use xlink:href="#tran" transform="translate(2972,496)"/>
+   <use xlink:href="#tran" transform="translate(-683,496)"/>
+   <use xlink:href="#orig" transform="translate(700,-600)"/>
+   <title>u1=0.70, u2=0.60 &#8594; z0=-0.68, z1=-0.50</title>
+  </g>
+  <g class="active" stroke="#9900A5" fill="#9900A5">
+   <use xlink:href="#tran" transform="translate(-750,-2920)"/>
+   <use xlink:href="#tran" transform="translate(2963,545)"/>
+   <use xlink:href="#tran" transform="translate(-750,545)"/>
+   <use xlink:href="#orig" transform="translate(650,-600)"/>
+   <title>u1=0.65, u2=0.60 &#8594; z0=-0.75, z1=-0.55</title>
+  </g>
+  <g class="active" stroke="#999999" fill="#999999">
+   <use xlink:href="#tran" transform="translate(-817,-2905)"/>
+   <use xlink:href="#tran" transform="translate(2954,594)"/>
+   <use xlink:href="#tran" transform="translate(-817,594)"/>
+   <use xlink:href="#orig" transform="translate(600,-600)"/>
+   <title>u1=0.60, u2=0.60 &#8594; z0=-0.82, z1=-0.59</title>
+  </g>
+  <g class="active" stroke="#99998C" fill="#99998C">
+   <use xlink:href="#tran" transform="translate(-884,-2889)"/>
+   <use xlink:href="#tran" transform="translate(2944,642)"/>
+   <use xlink:href="#tran" transform="translate(-884,642)"/>
+   <use xlink:href="#orig" transform="translate(550,-600)"/>
+   <title>u1=0.55, u2=0.60 &#8594; z0=-0.88, z1=-0.64</title>
+  </g>
+  <g class="active" stroke="#99997F" fill="#99997F">
+   <use xlink:href="#tran" transform="translate(-952,-2873)"/>
+   <use xlink:href="#tran" transform="translate(2933,692)"/>
+   <use xlink:href="#tran" transform="translate(-952,692)"/>
+   <use xlink:href="#orig" transform="translate(500,-600)"/>
+   <title>u1=0.50, u2=0.60 &#8594; z0=-0.95, z1=-0.69</title>
+  </g>
+  <g class="active" stroke="#999972" fill="#999972">
+   <use xlink:href="#tran" transform="translate(-1022,-2856)"/>
+   <use xlink:href="#tran" transform="translate(2922,742)"/>
+   <use xlink:href="#tran" transform="translate(-1022,742)"/>
+   <use xlink:href="#orig" transform="translate(450,-600)"/>
+   <title>u1=0.45, u2=0.60 &#8594; z0=-1.02, z1=-0.74</title>
+  </g>
+  <g class="active" stroke="#999966" fill="#999966">
+   <use xlink:href="#tran" transform="translate(-1095,-2839)"/>
+   <use xlink:href="#tran" transform="translate(2910,795)"/>
+   <use xlink:href="#tran" transform="translate(-1095,795)"/>
+   <use xlink:href="#orig" transform="translate(400,-600)"/>
+   <title>u1=0.40, u2=0.60 &#8594; z0=-1.10, z1=-0.80</title>
+  </g>
+  <g class="active" stroke="#999959" fill="#999959">
+   <use xlink:href="#tran" transform="translate(-1172,-2820)"/>
+   <use xlink:href="#tran" transform="translate(2897,851)"/>
+   <use xlink:href="#tran" transform="translate(-1172,851)"/>
+   <use xlink:href="#orig" transform="translate(350,-600)"/>
+   <title>u1=0.35, u2=0.60 &#8594; z0=-1.17, z1=-0.85</title>
+  </g>
+  <g class="active" stroke="#99994C" fill="#99994C">
+   <use xlink:href="#tran" transform="translate(-1255,-2801)"/>
+   <use xlink:href="#tran" transform="translate(2883,912)"/>
+   <use xlink:href="#tran" transform="translate(-1255,912)"/>
+   <use xlink:href="#orig" transform="translate(300,-600)"/>
+   <title>u1=0.30, u2=0.60 &#8594; z0=-1.26, z1=-0.91</title>
+  </g>
+  <g class="active" stroke="#99993F" fill="#99993F">
+   <use xlink:href="#tran" transform="translate(-1347,-2781)"/>
+   <use xlink:href="#tran" transform="translate(2867,978)"/>
+   <use xlink:href="#tran" transform="translate(-1347,978)"/>
+   <use xlink:href="#orig" transform="translate(250,-600)"/>
+   <title>u1=0.25, u2=0.60 &#8594; z0=-1.35, z1=-0.98</title>
+  </g>
+  <g class="active" stroke="#999933" fill="#999933">
+   <use xlink:href="#tran" transform="translate(-1451,-2759)"/>
+   <use xlink:href="#tran" transform="translate(2848,1054)"/>
+   <use xlink:href="#tran" transform="translate(-1451,1054)"/>
+   <use xlink:href="#orig" transform="translate(200,-600)"/>
+   <title>u1=0.20, u2=0.60 &#8594; z0=-1.45, z1=-1.05</title>
+  </g>
+  <g class="active" stroke="#999926" fill="#999926">
+   <use xlink:href="#tran" transform="translate(-1575,-2735)"/>
+   <use xlink:href="#tran" transform="translate(2827,1144)"/>
+   <use xlink:href="#tran" transform="translate(-1575,1144)"/>
+   <use xlink:href="#orig" transform="translate(150,-600)"/>
+   <title>u1=0.15, u2=0.60 &#8594; z0=-1.58, z1=-1.14</title>
+  </g>
+  <g class="active" stroke="#999919" fill="#999919">
+   <use xlink:href="#tran" transform="translate(-1736,-2708)"/>
+   <use xlink:href="#tran" transform="translate(2800,1261)"/>
+   <use xlink:href="#tran" transform="translate(-1736,1261)"/>
+   <use xlink:href="#orig" transform="translate(100,-600)"/>
+   <title>u1=0.10, u2=0.60 &#8594; z0=-1.74, z1=-1.26</title>
+  </g>
+  <g class="active" stroke="#99990C" fill="#99990C">
+   <use xlink:href="#tran" transform="translate(-1980,-2676)"/>
+   <use xlink:href="#tran" transform="translate(2761,1438)"/>
+   <use xlink:href="#tran" transform="translate(-1980,1438)"/>
+   <use xlink:href="#orig" transform="translate(50,-600)"/>
+   <title>u1=0.05, u2=0.60 &#8594; z0=-1.98, z1=-1.44</title>
+  </g>
+  <g class="active" stroke="#8C00FF" fill="#8C00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-550)"/>
+   <title>u1=1.00, u2=0.55 &#8594; z0=0.00, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#8C00F2" fill="#8C00F2">
+   <use xlink:href="#tran" transform="translate(-304,-3000)"/>
+   <use xlink:href="#tran" transform="translate(3016,98)"/>
+   <use xlink:href="#tran" transform="translate(-304,98)"/>
+   <use xlink:href="#orig" transform="translate(950,-550)"/>
+   <title>u1=0.95, u2=0.55 &#8594; z0=-0.30, z1=-0.10</title>
+  </g>
+  <g class="active" stroke="#8C00E5" fill="#8C00E5">
+   <use xlink:href="#tran" transform="translate(-436,-2982)"/>
+   <use xlink:href="#tran" transform="translate(3014,141)"/>
+   <use xlink:href="#tran" transform="translate(-436,141)"/>
+   <use xlink:href="#orig" transform="translate(900,-550)"/>
+   <title>u1=0.90, u2=0.55 &#8594; z0=-0.44, z1=-0.14</title>
+  </g>
+  <g class="active" stroke="#8C00D8" fill="#8C00D8">
+   <use xlink:href="#tran" transform="translate(-542,-2964)"/>
+   <use xlink:href="#tran" transform="translate(3012,176)"/>
+   <use xlink:href="#tran" transform="translate(-542,176)"/>
+   <use xlink:href="#orig" transform="translate(850,-550)"/>
+   <title>u1=0.85, u2=0.55 &#8594; z0=-0.54, z1=-0.18</title>
+  </g>
+  <g class="active" stroke="#8C00CC" fill="#8C00CC">
+   <use xlink:href="#tran" transform="translate(-635,-2946)"/>
+   <use xlink:href="#tran" transform="translate(3010,206)"/>
+   <use xlink:href="#tran" transform="translate(-635,206)"/>
+   <use xlink:href="#orig" transform="translate(800,-550)"/>
+   <title>u1=0.80, u2=0.55 &#8594; z0=-0.64, z1=-0.21</title>
+  </g>
+  <g class="active" stroke="#8C00BF" fill="#8C00BF">
+   <use xlink:href="#tran" transform="translate(-721,-2927)"/>
+   <use xlink:href="#tran" transform="translate(3008,234)"/>
+   <use xlink:href="#tran" transform="translate(-721,234)"/>
+   <use xlink:href="#orig" transform="translate(750,-550)"/>
+   <title>u1=0.75, u2=0.55 &#8594; z0=-0.72, z1=-0.23</title>
+  </g>
+  <g class="active" stroke="#8C00B2" fill="#8C00B2">
+   <use xlink:href="#tran" transform="translate(-803,-2908)"/>
+   <use xlink:href="#tran" transform="translate(3005,260)"/>
+   <use xlink:href="#tran" transform="translate(-803,260)"/>
+   <use xlink:href="#orig" transform="translate(700,-550)"/>
+   <title>u1=0.70, u2=0.55 &#8594; z0=-0.80, z1=-0.26</title>
+  </g>
+  <g class="active" stroke="#8C00A5" fill="#8C00A5">
+   <use xlink:href="#tran" transform="translate(-882,-2890)"/>
+   <use xlink:href="#tran" transform="translate(3002,286)"/>
+   <use xlink:href="#tran" transform="translate(-882,286)"/>
+   <use xlink:href="#orig" transform="translate(650,-550)"/>
+   <title>u1=0.65, u2=0.55 &#8594; z0=-0.88, z1=-0.29</title>
+  </g>
+  <g class="active" stroke="#8C9999" fill="#8C9999">
+   <use xlink:href="#tran" transform="translate(-961,-2871)"/>
+   <use xlink:href="#tran" transform="translate(2999,312)"/>
+   <use xlink:href="#tran" transform="translate(-961,312)"/>
+   <use xlink:href="#orig" transform="translate(600,-550)"/>
+   <title>u1=0.60, u2=0.55 &#8594; z0=-0.96, z1=-0.31</title>
+  </g>
+  <g class="active" stroke="#8C998C" fill="#8C998C">
+   <use xlink:href="#tran" transform="translate(-1039,-2852)"/>
+   <use xlink:href="#tran" transform="translate(2996,337)"/>
+   <use xlink:href="#tran" transform="translate(-1039,337)"/>
+   <use xlink:href="#orig" transform="translate(550,-550)"/>
+   <title>u1=0.55, u2=0.55 &#8594; z0=-1.04, z1=-0.34</title>
+  </g>
+  <g class="active" stroke="#8C997F" fill="#8C997F">
+   <use xlink:href="#tran" transform="translate(-1119,-2833)"/>
+   <use xlink:href="#tran" transform="translate(2993,363)"/>
+   <use xlink:href="#tran" transform="translate(-1119,363)"/>
+   <use xlink:href="#orig" transform="translate(500,-550)"/>
+   <title>u1=0.50, u2=0.55 &#8594; z0=-1.12, z1=-0.36</title>
+  </g>
+  <g class="active" stroke="#8C9972" fill="#8C9972">
+   <use xlink:href="#tran" transform="translate(-1201,-2813)"/>
+   <use xlink:href="#tran" transform="translate(2989,390)"/>
+   <use xlink:href="#tran" transform="translate(-1201,390)"/>
+   <use xlink:href="#orig" transform="translate(450,-550)"/>
+   <title>u1=0.45, u2=0.55 &#8594; z0=-1.20, z1=-0.39</title>
+  </g>
+  <g class="active" stroke="#8C9966" fill="#8C9966">
+   <use xlink:href="#tran" transform="translate(-1287,-2794)"/>
+   <use xlink:href="#tran" transform="translate(2985,418)"/>
+   <use xlink:href="#tran" transform="translate(-1287,418)"/>
+   <use xlink:href="#orig" transform="translate(400,-550)"/>
+   <title>u1=0.40, u2=0.55 &#8594; z0=-1.29, z1=-0.42</title>
+  </g>
+  <g class="active" stroke="#8C9959" fill="#8C9959">
+   <use xlink:href="#tran" transform="translate(-1378,-2774)"/>
+   <use xlink:href="#tran" transform="translate(2980,447)"/>
+   <use xlink:href="#tran" transform="translate(-1378,447)"/>
+   <use xlink:href="#orig" transform="translate(350,-550)"/>
+   <title>u1=0.35, u2=0.55 &#8594; z0=-1.38, z1=-0.45</title>
+  </g>
+  <g class="active" stroke="#8C994C" fill="#8C994C">
+   <use xlink:href="#tran" transform="translate(-1475,-2754)"/>
+   <use xlink:href="#tran" transform="translate(2975,479)"/>
+   <use xlink:href="#tran" transform="translate(-1475,479)"/>
+   <use xlink:href="#orig" transform="translate(300,-550)"/>
+   <title>u1=0.30, u2=0.55 &#8594; z0=-1.48, z1=-0.48</title>
+  </g>
+  <g class="active" stroke="#8C993F" fill="#8C993F">
+   <use xlink:href="#tran" transform="translate(-1583,-2733)"/>
+   <use xlink:href="#tran" transform="translate(2969,514)"/>
+   <use xlink:href="#tran" transform="translate(-1583,514)"/>
+   <use xlink:href="#orig" transform="translate(250,-550)"/>
+   <title>u1=0.25, u2=0.55 &#8594; z0=-1.58, z1=-0.51</title>
+  </g>
+  <g class="active" stroke="#8C9933" fill="#8C9933">
+   <use xlink:href="#tran" transform="translate(-1706,-2713)"/>
+   <use xlink:href="#tran" transform="translate(2962,554)"/>
+   <use xlink:href="#tran" transform="translate(-1706,554)"/>
+   <use xlink:href="#orig" transform="translate(200,-550)"/>
+   <title>u1=0.20, u2=0.55 &#8594; z0=-1.71, z1=-0.55</title>
+  </g>
+  <g class="active" stroke="#8C9926" fill="#8C9926">
+   <use xlink:href="#tran" transform="translate(-1852,-2691)"/>
+   <use xlink:href="#tran" transform="translate(2952,601)"/>
+   <use xlink:href="#tran" transform="translate(-1852,601)"/>
+   <use xlink:href="#orig" transform="translate(150,-550)"/>
+   <title>u1=0.15, u2=0.55 &#8594; z0=-1.85, z1=-0.60</title>
+  </g>
+  <g class="active" stroke="#8C9919" fill="#8C9919">
+   <use xlink:href="#tran" transform="translate(-2040,-2669)"/>
+   <use xlink:href="#tran" transform="translate(2940,663)"/>
+   <use xlink:href="#tran" transform="translate(-2040,663)"/>
+   <use xlink:href="#orig" transform="translate(100,-550)"/>
+   <title>u1=0.10, u2=0.55 &#8594; z0=-2.04, z1=-0.66</title>
+  </g>
+  <g class="active" stroke="#8C990C" fill="#8C990C">
+   <use xlink:href="#tran" transform="translate(-2327,-2646)"/>
+   <use xlink:href="#tran" transform="translate(2919,756)"/>
+   <use xlink:href="#tran" transform="translate(-2327,756)"/>
+   <use xlink:href="#orig" transform="translate(50,-550)"/>
+   <title>u1=0.05, u2=0.55 &#8594; z0=-2.33, z1=-0.76</title>
+  </g>
+  <g class="active" stroke="#7F00FF" fill="#7F00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-500)"/>
+   <title>u1=1.00, u2=0.50 &#8594; z0=0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#7F00F2" fill="#7F00F2">
+   <use xlink:href="#tran" transform="translate(-320,-2998)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-320,0)"/>
+   <use xlink:href="#orig" transform="translate(950,-500)"/>
+   <title>u1=0.95, u2=0.50 &#8594; z0=-0.32, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F00E5" fill="#7F00E5">
+   <use xlink:href="#tran" transform="translate(-459,-2979)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-459,0)"/>
+   <use xlink:href="#orig" transform="translate(900,-500)"/>
+   <title>u1=0.90, u2=0.50 &#8594; z0=-0.46, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F00D8" fill="#7F00D8">
+   <use xlink:href="#tran" transform="translate(-570,-2959)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-570,0)"/>
+   <use xlink:href="#orig" transform="translate(850,-500)"/>
+   <title>u1=0.85, u2=0.50 &#8594; z0=-0.57, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F00CC" fill="#7F00CC">
+   <use xlink:href="#tran" transform="translate(-668,-2939)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-668,0)"/>
+   <use xlink:href="#orig" transform="translate(800,-500)"/>
+   <title>u1=0.80, u2=0.50 &#8594; z0=-0.67, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F00BF" fill="#7F00BF">
+   <use xlink:href="#tran" transform="translate(-758,-2919)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-758,0)"/>
+   <use xlink:href="#orig" transform="translate(750,-500)"/>
+   <title>u1=0.75, u2=0.50 &#8594; z0=-0.76, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F00B2" fill="#7F00B2">
+   <use xlink:href="#tran" transform="translate(-844,-2899)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-844,0)"/>
+   <use xlink:href="#orig" transform="translate(700,-500)"/>
+   <title>u1=0.70, u2=0.50 &#8594; z0=-0.84, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F00A5" fill="#7F00A5">
+   <use xlink:href="#tran" transform="translate(-928,-2879)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-928,0)"/>
+   <use xlink:href="#orig" transform="translate(650,-500)"/>
+   <title>u1=0.65, u2=0.50 &#8594; z0=-0.93, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9999" fill="#7F9999">
+   <use xlink:href="#tran" transform="translate(-1010,-2859)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1010,0)"/>
+   <use xlink:href="#orig" transform="translate(600,-500)"/>
+   <title>u1=0.60, u2=0.50 &#8594; z0=-1.01, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F998C" fill="#7F998C">
+   <use xlink:href="#tran" transform="translate(-1093,-2839)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1093,0)"/>
+   <use xlink:href="#orig" transform="translate(550,-500)"/>
+   <title>u1=0.55, u2=0.50 &#8594; z0=-1.09, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F997F" fill="#7F997F">
+   <use xlink:href="#tran" transform="translate(-1177,-2819)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1177,0)"/>
+   <use xlink:href="#orig" transform="translate(500,-500)"/>
+   <title>u1=0.50, u2=0.50 &#8594; z0=-1.18, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9972" fill="#7F9972">
+   <use xlink:href="#tran" transform="translate(-1263,-2799)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1263,0)"/>
+   <use xlink:href="#orig" transform="translate(450,-500)"/>
+   <title>u1=0.45, u2=0.50 &#8594; z0=-1.26, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9966" fill="#7F9966">
+   <use xlink:href="#tran" transform="translate(-1353,-2779)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1353,0)"/>
+   <use xlink:href="#orig" transform="translate(400,-500)"/>
+   <title>u1=0.40, u2=0.50 &#8594; z0=-1.35, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9959" fill="#7F9959">
+   <use xlink:href="#tran" transform="translate(-1449,-2759)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1449,0)"/>
+   <use xlink:href="#orig" transform="translate(350,-500)"/>
+   <title>u1=0.35, u2=0.50 &#8594; z0=-1.45, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F994C" fill="#7F994C">
+   <use xlink:href="#tran" transform="translate(-1551,-2739)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1551,0)"/>
+   <use xlink:href="#orig" transform="translate(300,-500)"/>
+   <title>u1=0.30, u2=0.50 &#8594; z0=-1.55, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F993F" fill="#7F993F">
+   <use xlink:href="#tran" transform="translate(-1665,-2719)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1665,0)"/>
+   <use xlink:href="#orig" transform="translate(250,-500)"/>
+   <title>u1=0.25, u2=0.50 &#8594; z0=-1.67, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9933" fill="#7F9933">
+   <use xlink:href="#tran" transform="translate(-1794,-2699)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1794,0)"/>
+   <use xlink:href="#orig" transform="translate(200,-500)"/>
+   <title>u1=0.20, u2=0.50 &#8594; z0=-1.79, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9926" fill="#7F9926">
+   <use xlink:href="#tran" transform="translate(-1947,-2679)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-1947,0)"/>
+   <use xlink:href="#orig" transform="translate(150,-500)"/>
+   <title>u1=0.15, u2=0.50 &#8594; z0=-1.95, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F9919" fill="#7F9919">
+   <use xlink:href="#tran" transform="translate(-2145,-2659)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-2145,0)"/>
+   <use xlink:href="#orig" transform="translate(100,-500)"/>
+   <title>u1=0.10, u2=0.50 &#8594; z0=-2.15, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7F990C" fill="#7F990C">
+   <use xlink:href="#tran" transform="translate(-2447,-2639)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(-2447,0)"/>
+   <use xlink:href="#orig" transform="translate(50,-500)"/>
+   <title>u1=0.05, u2=0.50 &#8594; z0=-2.45, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#7200FF" fill="#7200FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-450)"/>
+   <title>u1=1.00, u2=0.45 &#8594; z0=0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#7200F2" fill="#7200F2">
+   <use xlink:href="#tran" transform="translate(-304,-3000)"/>
+   <use xlink:href="#tran" transform="translate(3016,-98)"/>
+   <use xlink:href="#tran" transform="translate(-304,-98)"/>
+   <use xlink:href="#orig" transform="translate(950,-450)"/>
+   <title>u1=0.95, u2=0.45 &#8594; z0=-0.30, z1=0.10</title>
+  </g>
+  <g class="active" stroke="#7200E5" fill="#7200E5">
+   <use xlink:href="#tran" transform="translate(-436,-2982)"/>
+   <use xlink:href="#tran" transform="translate(3014,-141)"/>
+   <use xlink:href="#tran" transform="translate(-436,-141)"/>
+   <use xlink:href="#orig" transform="translate(900,-450)"/>
+   <title>u1=0.90, u2=0.45 &#8594; z0=-0.44, z1=0.14</title>
+  </g>
+  <g class="active" stroke="#7200D8" fill="#7200D8">
+   <use xlink:href="#tran" transform="translate(-542,-2964)"/>
+   <use xlink:href="#tran" transform="translate(3012,-176)"/>
+   <use xlink:href="#tran" transform="translate(-542,-176)"/>
+   <use xlink:href="#orig" transform="translate(850,-450)"/>
+   <title>u1=0.85, u2=0.45 &#8594; z0=-0.54, z1=0.18</title>
+  </g>
+  <g class="active" stroke="#7200CC" fill="#7200CC">
+   <use xlink:href="#tran" transform="translate(-635,-2946)"/>
+   <use xlink:href="#tran" transform="translate(3010,-206)"/>
+   <use xlink:href="#tran" transform="translate(-635,-206)"/>
+   <use xlink:href="#orig" transform="translate(800,-450)"/>
+   <title>u1=0.80, u2=0.45 &#8594; z0=-0.64, z1=0.21</title>
+  </g>
+  <g class="active" stroke="#7200BF" fill="#7200BF">
+   <use xlink:href="#tran" transform="translate(-721,-2927)"/>
+   <use xlink:href="#tran" transform="translate(3008,-234)"/>
+   <use xlink:href="#tran" transform="translate(-721,-234)"/>
+   <use xlink:href="#orig" transform="translate(750,-450)"/>
+   <title>u1=0.75, u2=0.45 &#8594; z0=-0.72, z1=0.23</title>
+  </g>
+  <g class="active" stroke="#7200B2" fill="#7200B2">
+   <use xlink:href="#tran" transform="translate(-803,-2908)"/>
+   <use xlink:href="#tran" transform="translate(3005,-260)"/>
+   <use xlink:href="#tran" transform="translate(-803,-260)"/>
+   <use xlink:href="#orig" transform="translate(700,-450)"/>
+   <title>u1=0.70, u2=0.45 &#8594; z0=-0.80, z1=0.26</title>
+  </g>
+  <g class="active" stroke="#7200A5" fill="#7200A5">
+   <use xlink:href="#tran" transform="translate(-882,-2890)"/>
+   <use xlink:href="#tran" transform="translate(3002,-286)"/>
+   <use xlink:href="#tran" transform="translate(-882,-286)"/>
+   <use xlink:href="#orig" transform="translate(650,-450)"/>
+   <title>u1=0.65, u2=0.45 &#8594; z0=-0.88, z1=0.29</title>
+  </g>
+  <g class="active" stroke="#729999" fill="#729999">
+   <use xlink:href="#tran" transform="translate(-961,-2871)"/>
+   <use xlink:href="#tran" transform="translate(2999,-312)"/>
+   <use xlink:href="#tran" transform="translate(-961,-312)"/>
+   <use xlink:href="#orig" transform="translate(600,-450)"/>
+   <title>u1=0.60, u2=0.45 &#8594; z0=-0.96, z1=0.31</title>
+  </g>
+  <g class="active" stroke="#72998C" fill="#72998C">
+   <use xlink:href="#tran" transform="translate(-1039,-2852)"/>
+   <use xlink:href="#tran" transform="translate(2996,-337)"/>
+   <use xlink:href="#tran" transform="translate(-1039,-337)"/>
+   <use xlink:href="#orig" transform="translate(550,-450)"/>
+   <title>u1=0.55, u2=0.45 &#8594; z0=-1.04, z1=0.34</title>
+  </g>
+  <g class="active" stroke="#72997F" fill="#72997F">
+   <use xlink:href="#tran" transform="translate(-1119,-2833)"/>
+   <use xlink:href="#tran" transform="translate(2993,-363)"/>
+   <use xlink:href="#tran" transform="translate(-1119,-363)"/>
+   <use xlink:href="#orig" transform="translate(500,-450)"/>
+   <title>u1=0.50, u2=0.45 &#8594; z0=-1.12, z1=0.36</title>
+  </g>
+  <g class="active" stroke="#729972" fill="#729972">
+   <use xlink:href="#tran" transform="translate(-1201,-2813)"/>
+   <use xlink:href="#tran" transform="translate(2989,-390)"/>
+   <use xlink:href="#tran" transform="translate(-1201,-390)"/>
+   <use xlink:href="#orig" transform="translate(450,-450)"/>
+   <title>u1=0.45, u2=0.45 &#8594; z0=-1.20, z1=0.39</title>
+  </g>
+  <g class="active" stroke="#729966" fill="#729966">
+   <use xlink:href="#tran" transform="translate(-1287,-2794)"/>
+   <use xlink:href="#tran" transform="translate(2985,-418)"/>
+   <use xlink:href="#tran" transform="translate(-1287,-418)"/>
+   <use xlink:href="#orig" transform="translate(400,-450)"/>
+   <title>u1=0.40, u2=0.45 &#8594; z0=-1.29, z1=0.42</title>
+  </g>
+  <g class="active" stroke="#729959" fill="#729959">
+   <use xlink:href="#tran" transform="translate(-1378,-2774)"/>
+   <use xlink:href="#tran" transform="translate(2980,-447)"/>
+   <use xlink:href="#tran" transform="translate(-1378,-447)"/>
+   <use xlink:href="#orig" transform="translate(350,-450)"/>
+   <title>u1=0.35, u2=0.45 &#8594; z0=-1.38, z1=0.45</title>
+  </g>
+  <g class="active" stroke="#72994C" fill="#72994C">
+   <use xlink:href="#tran" transform="translate(-1475,-2754)"/>
+   <use xlink:href="#tran" transform="translate(2975,-479)"/>
+   <use xlink:href="#tran" transform="translate(-1475,-479)"/>
+   <use xlink:href="#orig" transform="translate(300,-450)"/>
+   <title>u1=0.30, u2=0.45 &#8594; z0=-1.48, z1=0.48</title>
+  </g>
+  <g class="active" stroke="#72993F" fill="#72993F">
+   <use xlink:href="#tran" transform="translate(-1583,-2733)"/>
+   <use xlink:href="#tran" transform="translate(2969,-514)"/>
+   <use xlink:href="#tran" transform="translate(-1583,-514)"/>
+   <use xlink:href="#orig" transform="translate(250,-450)"/>
+   <title>u1=0.25, u2=0.45 &#8594; z0=-1.58, z1=0.51</title>
+  </g>
+  <g class="active" stroke="#729933" fill="#729933">
+   <use xlink:href="#tran" transform="translate(-1706,-2713)"/>
+   <use xlink:href="#tran" transform="translate(2962,-554)"/>
+   <use xlink:href="#tran" transform="translate(-1706,-554)"/>
+   <use xlink:href="#orig" transform="translate(200,-450)"/>
+   <title>u1=0.20, u2=0.45 &#8594; z0=-1.71, z1=0.55</title>
+  </g>
+  <g class="active" stroke="#729926" fill="#729926">
+   <use xlink:href="#tran" transform="translate(-1852,-2691)"/>
+   <use xlink:href="#tran" transform="translate(2952,-601)"/>
+   <use xlink:href="#tran" transform="translate(-1852,-601)"/>
+   <use xlink:href="#orig" transform="translate(150,-450)"/>
+   <title>u1=0.15, u2=0.45 &#8594; z0=-1.85, z1=0.60</title>
+  </g>
+  <g class="active" stroke="#729919" fill="#729919">
+   <use xlink:href="#tran" transform="translate(-2040,-2669)"/>
+   <use xlink:href="#tran" transform="translate(2940,-663)"/>
+   <use xlink:href="#tran" transform="translate(-2040,-663)"/>
+   <use xlink:href="#orig" transform="translate(100,-450)"/>
+   <title>u1=0.10, u2=0.45 &#8594; z0=-2.04, z1=0.66</title>
+  </g>
+  <g class="active" stroke="#72990C" fill="#72990C">
+   <use xlink:href="#tran" transform="translate(-2327,-2646)"/>
+   <use xlink:href="#tran" transform="translate(2919,-756)"/>
+   <use xlink:href="#tran" transform="translate(-2327,-756)"/>
+   <use xlink:href="#orig" transform="translate(50,-450)"/>
+   <title>u1=0.05, u2=0.45 &#8594; z0=-2.33, z1=0.76</title>
+  </g>
+  <g class="active" stroke="#6600FF" fill="#6600FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-400)"/>
+   <title>u1=1.00, u2=0.40 &#8594; z0=0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#6600F2" fill="#6600F2">
+   <use xlink:href="#tran" transform="translate(-259,-3005)"/>
+   <use xlink:href="#tran" transform="translate(3011,-188)"/>
+   <use xlink:href="#tran" transform="translate(-259,-188)"/>
+   <use xlink:href="#orig" transform="translate(950,-400)"/>
+   <title>u1=0.95, u2=0.40 &#8594; z0=-0.26, z1=0.19</title>
+  </g>
+  <g class="active" stroke="#6600E5" fill="#6600E5">
+   <use xlink:href="#tran" transform="translate(-371,-2992)"/>
+   <use xlink:href="#tran" transform="translate(3004,-269)"/>
+   <use xlink:href="#tran" transform="translate(-371,-269)"/>
+   <use xlink:href="#orig" transform="translate(900,-400)"/>
+   <title>u1=0.90, u2=0.40 &#8594; z0=-0.37, z1=0.27</title>
+  </g>
+  <g class="active" stroke="#6600D8" fill="#6600D8">
+   <use xlink:href="#tran" transform="translate(-461,-2978)"/>
+   <use xlink:href="#tran" transform="translate(2997,-335)"/>
+   <use xlink:href="#tran" transform="translate(-461,-335)"/>
+   <use xlink:href="#orig" transform="translate(850,-400)"/>
+   <title>u1=0.85, u2=0.40 &#8594; z0=-0.46, z1=0.34</title>
+  </g>
+  <g class="active" stroke="#6600CC" fill="#6600CC">
+   <use xlink:href="#tran" transform="translate(-540,-2964)"/>
+   <use xlink:href="#tran" transform="translate(2989,-392)"/>
+   <use xlink:href="#tran" transform="translate(-540,-392)"/>
+   <use xlink:href="#orig" transform="translate(800,-400)"/>
+   <title>u1=0.80, u2=0.40 &#8594; z0=-0.54, z1=0.39</title>
+  </g>
+  <g class="active" stroke="#6600BF" fill="#6600BF">
+   <use xlink:href="#tran" transform="translate(-613,-2950)"/>
+   <use xlink:href="#tran" transform="translate(2981,-445)"/>
+   <use xlink:href="#tran" transform="translate(-613,-445)"/>
+   <use xlink:href="#orig" transform="translate(750,-400)"/>
+   <title>u1=0.75, u2=0.40 &#8594; z0=-0.61, z1=0.45</title>
+  </g>
+  <g class="active" stroke="#6600B2" fill="#6600B2">
+   <use xlink:href="#tran" transform="translate(-683,-2935)"/>
+   <use xlink:href="#tran" transform="translate(2972,-496)"/>
+   <use xlink:href="#tran" transform="translate(-683,-496)"/>
+   <use xlink:href="#orig" transform="translate(700,-400)"/>
+   <title>u1=0.70, u2=0.40 &#8594; z0=-0.68, z1=0.50</title>
+  </g>
+  <g class="active" stroke="#6600A5" fill="#6600A5">
+   <use xlink:href="#tran" transform="translate(-750,-2920)"/>
+   <use xlink:href="#tran" transform="translate(2963,-545)"/>
+   <use xlink:href="#tran" transform="translate(-750,-545)"/>
+   <use xlink:href="#orig" transform="translate(650,-400)"/>
+   <title>u1=0.65, u2=0.40 &#8594; z0=-0.75, z1=0.55</title>
+  </g>
+  <g class="active" stroke="#669999" fill="#669999">
+   <use xlink:href="#tran" transform="translate(-817,-2905)"/>
+   <use xlink:href="#tran" transform="translate(2954,-594)"/>
+   <use xlink:href="#tran" transform="translate(-817,-594)"/>
+   <use xlink:href="#orig" transform="translate(600,-400)"/>
+   <title>u1=0.60, u2=0.40 &#8594; z0=-0.82, z1=0.59</title>
+  </g>
+  <g class="active" stroke="#66998C" fill="#66998C">
+   <use xlink:href="#tran" transform="translate(-884,-2889)"/>
+   <use xlink:href="#tran" transform="translate(2944,-642)"/>
+   <use xlink:href="#tran" transform="translate(-884,-642)"/>
+   <use xlink:href="#orig" transform="translate(550,-400)"/>
+   <title>u1=0.55, u2=0.40 &#8594; z0=-0.88, z1=0.64</title>
+  </g>
+  <g class="active" stroke="#66997F" fill="#66997F">
+   <use xlink:href="#tran" transform="translate(-952,-2873)"/>
+   <use xlink:href="#tran" transform="translate(2933,-692)"/>
+   <use xlink:href="#tran" transform="translate(-952,-692)"/>
+   <use xlink:href="#orig" transform="translate(500,-400)"/>
+   <title>u1=0.50, u2=0.40 &#8594; z0=-0.95, z1=0.69</title>
+  </g>
+  <g class="active" stroke="#669972" fill="#669972">
+   <use xlink:href="#tran" transform="translate(-1022,-2856)"/>
+   <use xlink:href="#tran" transform="translate(2922,-742)"/>
+   <use xlink:href="#tran" transform="translate(-1022,-742)"/>
+   <use xlink:href="#orig" transform="translate(450,-400)"/>
+   <title>u1=0.45, u2=0.40 &#8594; z0=-1.02, z1=0.74</title>
+  </g>
+  <g class="active" stroke="#669966" fill="#669966">
+   <use xlink:href="#tran" transform="translate(-1095,-2839)"/>
+   <use xlink:href="#tran" transform="translate(2910,-795)"/>
+   <use xlink:href="#tran" transform="translate(-1095,-795)"/>
+   <use xlink:href="#orig" transform="translate(400,-400)"/>
+   <title>u1=0.40, u2=0.40 &#8594; z0=-1.10, z1=0.80</title>
+  </g>
+  <g class="active" stroke="#669959" fill="#669959">
+   <use xlink:href="#tran" transform="translate(-1172,-2820)"/>
+   <use xlink:href="#tran" transform="translate(2897,-851)"/>
+   <use xlink:href="#tran" transform="translate(-1172,-851)"/>
+   <use xlink:href="#orig" transform="translate(350,-400)"/>
+   <title>u1=0.35, u2=0.40 &#8594; z0=-1.17, z1=0.85</title>
+  </g>
+  <g class="active" stroke="#66994C" fill="#66994C">
+   <use xlink:href="#tran" transform="translate(-1255,-2801)"/>
+   <use xlink:href="#tran" transform="translate(2883,-912)"/>
+   <use xlink:href="#tran" transform="translate(-1255,-912)"/>
+   <use xlink:href="#orig" transform="translate(300,-400)"/>
+   <title>u1=0.30, u2=0.40 &#8594; z0=-1.26, z1=0.91</title>
+  </g>
+  <g class="active" stroke="#66993F" fill="#66993F">
+   <use xlink:href="#tran" transform="translate(-1347,-2781)"/>
+   <use xlink:href="#tran" transform="translate(2867,-978)"/>
+   <use xlink:href="#tran" transform="translate(-1347,-978)"/>
+   <use xlink:href="#orig" transform="translate(250,-400)"/>
+   <title>u1=0.25, u2=0.40 &#8594; z0=-1.35, z1=0.98</title>
+  </g>
+  <g class="active" stroke="#669933" fill="#669933">
+   <use xlink:href="#tran" transform="translate(-1451,-2759)"/>
+   <use xlink:href="#tran" transform="translate(2848,-1054)"/>
+   <use xlink:href="#tran" transform="translate(-1451,-1054)"/>
+   <use xlink:href="#orig" transform="translate(200,-400)"/>
+   <title>u1=0.20, u2=0.40 &#8594; z0=-1.45, z1=1.05</title>
+  </g>
+  <g class="active" stroke="#669926" fill="#669926">
+   <use xlink:href="#tran" transform="translate(-1575,-2735)"/>
+   <use xlink:href="#tran" transform="translate(2827,-1144)"/>
+   <use xlink:href="#tran" transform="translate(-1575,-1144)"/>
+   <use xlink:href="#orig" transform="translate(150,-400)"/>
+   <title>u1=0.15, u2=0.40 &#8594; z0=-1.58, z1=1.14</title>
+  </g>
+  <g class="active" stroke="#669919" fill="#669919">
+   <use xlink:href="#tran" transform="translate(-1736,-2708)"/>
+   <use xlink:href="#tran" transform="translate(2800,-1261)"/>
+   <use xlink:href="#tran" transform="translate(-1736,-1261)"/>
+   <use xlink:href="#orig" transform="translate(100,-400)"/>
+   <title>u1=0.10, u2=0.40 &#8594; z0=-1.74, z1=1.26</title>
+  </g>
+  <g class="active" stroke="#66990C" fill="#66990C">
+   <use xlink:href="#tran" transform="translate(-1980,-2676)"/>
+   <use xlink:href="#tran" transform="translate(2761,-1438)"/>
+   <use xlink:href="#tran" transform="translate(-1980,-1438)"/>
+   <use xlink:href="#orig" transform="translate(50,-400)"/>
+   <title>u1=0.05, u2=0.40 &#8594; z0=-1.98, z1=1.44</title>
+  </g>
+  <g class="active" stroke="#5900FF" fill="#5900FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-350)"/>
+   <title>u1=1.00, u2=0.35 &#8594; z0=0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#5900F2" fill="#5900F2">
+   <use xlink:href="#tran" transform="translate(-188,-3011)"/>
+   <use xlink:href="#tran" transform="translate(3005,-259)"/>
+   <use xlink:href="#tran" transform="translate(-188,-259)"/>
+   <use xlink:href="#orig" transform="translate(950,-350)"/>
+   <title>u1=0.95, u2=0.35 &#8594; z0=-0.19, z1=0.26</title>
+  </g>
+  <g class="active" stroke="#5900E5" fill="#5900E5">
+   <use xlink:href="#tran" transform="translate(-269,-3004)"/>
+   <use xlink:href="#tran" transform="translate(2992,-371)"/>
+   <use xlink:href="#tran" transform="translate(-269,-371)"/>
+   <use xlink:href="#orig" transform="translate(900,-350)"/>
+   <title>u1=0.90, u2=0.35 &#8594; z0=-0.27, z1=0.37</title>
+  </g>
+  <g class="active" stroke="#5900D8" fill="#5900D8">
+   <use xlink:href="#tran" transform="translate(-335,-2997)"/>
+   <use xlink:href="#tran" transform="translate(2978,-461)"/>
+   <use xlink:href="#tran" transform="translate(-335,-461)"/>
+   <use xlink:href="#orig" transform="translate(850,-350)"/>
+   <title>u1=0.85, u2=0.35 &#8594; z0=-0.34, z1=0.46</title>
+  </g>
+  <g class="active" stroke="#5900CC" fill="#5900CC">
+   <use xlink:href="#tran" transform="translate(-392,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2964,-540)"/>
+   <use xlink:href="#tran" transform="translate(-392,-540)"/>
+   <use xlink:href="#orig" transform="translate(800,-350)"/>
+   <title>u1=0.80, u2=0.35 &#8594; z0=-0.39, z1=0.54</title>
+  </g>
+  <g class="active" stroke="#5900BF" fill="#5900BF">
+   <use xlink:href="#tran" transform="translate(-445,-2981)"/>
+   <use xlink:href="#tran" transform="translate(2950,-613)"/>
+   <use xlink:href="#tran" transform="translate(-445,-613)"/>
+   <use xlink:href="#orig" transform="translate(750,-350)"/>
+   <title>u1=0.75, u2=0.35 &#8594; z0=-0.45, z1=0.61</title>
+  </g>
+  <g class="active" stroke="#5900B2" fill="#5900B2">
+   <use xlink:href="#tran" transform="translate(-496,-2972)"/>
+   <use xlink:href="#tran" transform="translate(2935,-683)"/>
+   <use xlink:href="#tran" transform="translate(-496,-683)"/>
+   <use xlink:href="#orig" transform="translate(700,-350)"/>
+   <title>u1=0.70, u2=0.35 &#8594; z0=-0.50, z1=0.68</title>
+  </g>
+  <g class="active" stroke="#5900A5" fill="#5900A5">
+   <use xlink:href="#tran" transform="translate(-545,-2963)"/>
+   <use xlink:href="#tran" transform="translate(2920,-750)"/>
+   <use xlink:href="#tran" transform="translate(-545,-750)"/>
+   <use xlink:href="#orig" transform="translate(650,-350)"/>
+   <title>u1=0.65, u2=0.35 &#8594; z0=-0.55, z1=0.75</title>
+  </g>
+  <g class="active" stroke="#599999" fill="#599999">
+   <use xlink:href="#tran" transform="translate(-594,-2954)"/>
+   <use xlink:href="#tran" transform="translate(2905,-817)"/>
+   <use xlink:href="#tran" transform="translate(-594,-817)"/>
+   <use xlink:href="#orig" transform="translate(600,-350)"/>
+   <title>u1=0.60, u2=0.35 &#8594; z0=-0.59, z1=0.82</title>
+  </g>
+  <g class="active" stroke="#59998C" fill="#59998C">
+   <use xlink:href="#tran" transform="translate(-642,-2944)"/>
+   <use xlink:href="#tran" transform="translate(2889,-884)"/>
+   <use xlink:href="#tran" transform="translate(-642,-884)"/>
+   <use xlink:href="#orig" transform="translate(550,-350)"/>
+   <title>u1=0.55, u2=0.35 &#8594; z0=-0.64, z1=0.88</title>
+  </g>
+  <g class="active" stroke="#59997F" fill="#59997F">
+   <use xlink:href="#tran" transform="translate(-692,-2933)"/>
+   <use xlink:href="#tran" transform="translate(2873,-952)"/>
+   <use xlink:href="#tran" transform="translate(-692,-952)"/>
+   <use xlink:href="#orig" transform="translate(500,-350)"/>
+   <title>u1=0.50, u2=0.35 &#8594; z0=-0.69, z1=0.95</title>
+  </g>
+  <g class="active" stroke="#599972" fill="#599972">
+   <use xlink:href="#tran" transform="translate(-742,-2922)"/>
+   <use xlink:href="#tran" transform="translate(2856,-1022)"/>
+   <use xlink:href="#tran" transform="translate(-742,-1022)"/>
+   <use xlink:href="#orig" transform="translate(450,-350)"/>
+   <title>u1=0.45, u2=0.35 &#8594; z0=-0.74, z1=1.02</title>
+  </g>
+  <g class="active" stroke="#599966" fill="#599966">
+   <use xlink:href="#tran" transform="translate(-795,-2910)"/>
+   <use xlink:href="#tran" transform="translate(2839,-1095)"/>
+   <use xlink:href="#tran" transform="translate(-795,-1095)"/>
+   <use xlink:href="#orig" transform="translate(400,-350)"/>
+   <title>u1=0.40, u2=0.35 &#8594; z0=-0.80, z1=1.10</title>
+  </g>
+  <g class="active" stroke="#599959" fill="#599959">
+   <use xlink:href="#tran" transform="translate(-851,-2897)"/>
+   <use xlink:href="#tran" transform="translate(2820,-1172)"/>
+   <use xlink:href="#tran" transform="translate(-851,-1172)"/>
+   <use xlink:href="#orig" transform="translate(350,-350)"/>
+   <title>u1=0.35, u2=0.35 &#8594; z0=-0.85, z1=1.17</title>
+  </g>
+  <g class="active" stroke="#59994C" fill="#59994C">
+   <use xlink:href="#tran" transform="translate(-912,-2883)"/>
+   <use xlink:href="#tran" transform="translate(2801,-1255)"/>
+   <use xlink:href="#tran" transform="translate(-912,-1255)"/>
+   <use xlink:href="#orig" transform="translate(300,-350)"/>
+   <title>u1=0.30, u2=0.35 &#8594; z0=-0.91, z1=1.26</title>
+  </g>
+  <g class="active" stroke="#59993F" fill="#59993F">
+   <use xlink:href="#tran" transform="translate(-978,-2867)"/>
+   <use xlink:href="#tran" transform="translate(2781,-1347)"/>
+   <use xlink:href="#tran" transform="translate(-978,-1347)"/>
+   <use xlink:href="#orig" transform="translate(250,-350)"/>
+   <title>u1=0.25, u2=0.35 &#8594; z0=-0.98, z1=1.35</title>
+  </g>
+  <g class="active" stroke="#599933" fill="#599933">
+   <use xlink:href="#tran" transform="translate(-1054,-2848)"/>
+   <use xlink:href="#tran" transform="translate(2759,-1451)"/>
+   <use xlink:href="#tran" transform="translate(-1054,-1451)"/>
+   <use xlink:href="#orig" transform="translate(200,-350)"/>
+   <title>u1=0.20, u2=0.35 &#8594; z0=-1.05, z1=1.45</title>
+  </g>
+  <g class="active" stroke="#599926" fill="#599926">
+   <use xlink:href="#tran" transform="translate(-1144,-2827)"/>
+   <use xlink:href="#tran" transform="translate(2735,-1575)"/>
+   <use xlink:href="#tran" transform="translate(-1144,-1575)"/>
+   <use xlink:href="#orig" transform="translate(150,-350)"/>
+   <title>u1=0.15, u2=0.35 &#8594; z0=-1.14, z1=1.58</title>
+  </g>
+  <g class="active" stroke="#599919" fill="#599919">
+   <use xlink:href="#tran" transform="translate(-1261,-2800)"/>
+   <use xlink:href="#tran" transform="translate(2708,-1736)"/>
+   <use xlink:href="#tran" transform="translate(-1261,-1736)"/>
+   <use xlink:href="#orig" transform="translate(100,-350)"/>
+   <title>u1=0.10, u2=0.35 &#8594; z0=-1.26, z1=1.74</title>
+  </g>
+  <g class="active" stroke="#59990C" fill="#59990C">
+   <use xlink:href="#tran" transform="translate(-1438,-2761)"/>
+   <use xlink:href="#tran" transform="translate(2676,-1980)"/>
+   <use xlink:href="#tran" transform="translate(-1438,-1980)"/>
+   <use xlink:href="#orig" transform="translate(50,-350)"/>
+   <title>u1=0.05, u2=0.35 &#8594; z0=-1.44, z1=1.98</title>
+  </g>
+  <g class="active" stroke="#4C00FF" fill="#4C00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-300)"/>
+   <title>u1=1.00, u2=0.30 &#8594; z0=0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#4C00F2" fill="#4C00F2">
+   <use xlink:href="#tran" transform="translate(-98,-3016)"/>
+   <use xlink:href="#tran" transform="translate(3000,-304)"/>
+   <use xlink:href="#tran" transform="translate(-98,-304)"/>
+   <use xlink:href="#orig" transform="translate(950,-300)"/>
+   <title>u1=0.95, u2=0.30 &#8594; z0=-0.10, z1=0.30</title>
+  </g>
+  <g class="active" stroke="#4C00E5" fill="#4C00E5">
+   <use xlink:href="#tran" transform="translate(-141,-3014)"/>
+   <use xlink:href="#tran" transform="translate(2982,-436)"/>
+   <use xlink:href="#tran" transform="translate(-141,-436)"/>
+   <use xlink:href="#orig" transform="translate(900,-300)"/>
+   <title>u1=0.90, u2=0.30 &#8594; z0=-0.14, z1=0.44</title>
+  </g>
+  <g class="active" stroke="#4C00D8" fill="#4C00D8">
+   <use xlink:href="#tran" transform="translate(-176,-3012)"/>
+   <use xlink:href="#tran" transform="translate(2964,-542)"/>
+   <use xlink:href="#tran" transform="translate(-176,-542)"/>
+   <use xlink:href="#orig" transform="translate(850,-300)"/>
+   <title>u1=0.85, u2=0.30 &#8594; z0=-0.18, z1=0.54</title>
+  </g>
+  <g class="active" stroke="#4C00CC" fill="#4C00CC">
+   <use xlink:href="#tran" transform="translate(-206,-3010)"/>
+   <use xlink:href="#tran" transform="translate(2946,-635)"/>
+   <use xlink:href="#tran" transform="translate(-206,-635)"/>
+   <use xlink:href="#orig" transform="translate(800,-300)"/>
+   <title>u1=0.80, u2=0.30 &#8594; z0=-0.21, z1=0.64</title>
+  </g>
+  <g class="active" stroke="#4C00BF" fill="#4C00BF">
+   <use xlink:href="#tran" transform="translate(-234,-3008)"/>
+   <use xlink:href="#tran" transform="translate(2927,-721)"/>
+   <use xlink:href="#tran" transform="translate(-234,-721)"/>
+   <use xlink:href="#orig" transform="translate(750,-300)"/>
+   <title>u1=0.75, u2=0.30 &#8594; z0=-0.23, z1=0.72</title>
+  </g>
+  <g class="active" stroke="#4C00B2" fill="#4C00B2">
+   <use xlink:href="#tran" transform="translate(-260,-3005)"/>
+   <use xlink:href="#tran" transform="translate(2908,-803)"/>
+   <use xlink:href="#tran" transform="translate(-260,-803)"/>
+   <use xlink:href="#orig" transform="translate(700,-300)"/>
+   <title>u1=0.70, u2=0.30 &#8594; z0=-0.26, z1=0.80</title>
+  </g>
+  <g class="active" stroke="#4C00A5" fill="#4C00A5">
+   <use xlink:href="#tran" transform="translate(-286,-3002)"/>
+   <use xlink:href="#tran" transform="translate(2890,-882)"/>
+   <use xlink:href="#tran" transform="translate(-286,-882)"/>
+   <use xlink:href="#orig" transform="translate(650,-300)"/>
+   <title>u1=0.65, u2=0.30 &#8594; z0=-0.29, z1=0.88</title>
+  </g>
+  <g class="active" stroke="#4C9999" fill="#4C9999">
+   <use xlink:href="#tran" transform="translate(-312,-2999)"/>
+   <use xlink:href="#tran" transform="translate(2871,-961)"/>
+   <use xlink:href="#tran" transform="translate(-312,-961)"/>
+   <use xlink:href="#orig" transform="translate(600,-300)"/>
+   <title>u1=0.60, u2=0.30 &#8594; z0=-0.31, z1=0.96</title>
+  </g>
+  <g class="active" stroke="#4C998C" fill="#4C998C">
+   <use xlink:href="#tran" transform="translate(-337,-2996)"/>
+   <use xlink:href="#tran" transform="translate(2852,-1039)"/>
+   <use xlink:href="#tran" transform="translate(-337,-1039)"/>
+   <use xlink:href="#orig" transform="translate(550,-300)"/>
+   <title>u1=0.55, u2=0.30 &#8594; z0=-0.34, z1=1.04</title>
+  </g>
+  <g class="active" stroke="#4C997F" fill="#4C997F">
+   <use xlink:href="#tran" transform="translate(-363,-2993)"/>
+   <use xlink:href="#tran" transform="translate(2833,-1119)"/>
+   <use xlink:href="#tran" transform="translate(-363,-1119)"/>
+   <use xlink:href="#orig" transform="translate(500,-300)"/>
+   <title>u1=0.50, u2=0.30 &#8594; z0=-0.36, z1=1.12</title>
+  </g>
+  <g class="active" stroke="#4C9972" fill="#4C9972">
+   <use xlink:href="#tran" transform="translate(-390,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2813,-1201)"/>
+   <use xlink:href="#tran" transform="translate(-390,-1201)"/>
+   <use xlink:href="#orig" transform="translate(450,-300)"/>
+   <title>u1=0.45, u2=0.30 &#8594; z0=-0.39, z1=1.20</title>
+  </g>
+  <g class="active" stroke="#4C9966" fill="#4C9966">
+   <use xlink:href="#tran" transform="translate(-418,-2985)"/>
+   <use xlink:href="#tran" transform="translate(2794,-1287)"/>
+   <use xlink:href="#tran" transform="translate(-418,-1287)"/>
+   <use xlink:href="#orig" transform="translate(400,-300)"/>
+   <title>u1=0.40, u2=0.30 &#8594; z0=-0.42, z1=1.29</title>
+  </g>
+  <g class="active" stroke="#4C9959" fill="#4C9959">
+   <use xlink:href="#tran" transform="translate(-447,-2980)"/>
+   <use xlink:href="#tran" transform="translate(2774,-1378)"/>
+   <use xlink:href="#tran" transform="translate(-447,-1378)"/>
+   <use xlink:href="#orig" transform="translate(350,-300)"/>
+   <title>u1=0.35, u2=0.30 &#8594; z0=-0.45, z1=1.38</title>
+  </g>
+  <g class="active" stroke="#4C994C" fill="#4C994C">
+   <use xlink:href="#tran" transform="translate(-479,-2975)"/>
+   <use xlink:href="#tran" transform="translate(2754,-1475)"/>
+   <use xlink:href="#tran" transform="translate(-479,-1475)"/>
+   <use xlink:href="#orig" transform="translate(300,-300)"/>
+   <title>u1=0.30, u2=0.30 &#8594; z0=-0.48, z1=1.48</title>
+  </g>
+  <g class="active" stroke="#4C993F" fill="#4C993F">
+   <use xlink:href="#tran" transform="translate(-514,-2969)"/>
+   <use xlink:href="#tran" transform="translate(2733,-1583)"/>
+   <use xlink:href="#tran" transform="translate(-514,-1583)"/>
+   <use xlink:href="#orig" transform="translate(250,-300)"/>
+   <title>u1=0.25, u2=0.30 &#8594; z0=-0.51, z1=1.58</title>
+  </g>
+  <g class="active" stroke="#4C9933" fill="#4C9933">
+   <use xlink:href="#tran" transform="translate(-554,-2962)"/>
+   <use xlink:href="#tran" transform="translate(2713,-1706)"/>
+   <use xlink:href="#tran" transform="translate(-554,-1706)"/>
+   <use xlink:href="#orig" transform="translate(200,-300)"/>
+   <title>u1=0.20, u2=0.30 &#8594; z0=-0.55, z1=1.71</title>
+  </g>
+  <g class="active" stroke="#4C9926" fill="#4C9926">
+   <use xlink:href="#tran" transform="translate(-601,-2952)"/>
+   <use xlink:href="#tran" transform="translate(2691,-1852)"/>
+   <use xlink:href="#tran" transform="translate(-601,-1852)"/>
+   <use xlink:href="#orig" transform="translate(150,-300)"/>
+   <title>u1=0.15, u2=0.30 &#8594; z0=-0.60, z1=1.85</title>
+  </g>
+  <g class="active" stroke="#4C9919" fill="#4C9919">
+   <use xlink:href="#tran" transform="translate(-663,-2940)"/>
+   <use xlink:href="#tran" transform="translate(2669,-2040)"/>
+   <use xlink:href="#tran" transform="translate(-663,-2040)"/>
+   <use xlink:href="#orig" transform="translate(100,-300)"/>
+   <title>u1=0.10, u2=0.30 &#8594; z0=-0.66, z1=2.04</title>
+  </g>
+  <g class="active" stroke="#4C990C" fill="#4C990C">
+   <use xlink:href="#tran" transform="translate(-756,-2919)"/>
+   <use xlink:href="#tran" transform="translate(2646,-2327)"/>
+   <use xlink:href="#tran" transform="translate(-756,-2327)"/>
+   <use xlink:href="#orig" transform="translate(50,-300)"/>
+   <title>u1=0.05, u2=0.30 &#8594; z0=-0.76, z1=2.33</title>
+  </g>
+  <g class="active" stroke="#3F00FF" fill="#3F00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-250)"/>
+   <title>u1=1.00, u2=0.25 &#8594; z0=-0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#3F00F2" fill="#3F00F2">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2998,-320)"/>
+   <use xlink:href="#tran" transform="translate(0,-320)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,-250)"/>
+   <title>u1=0.95, u2=0.25 &#8594; z0=0.00, z1=0.32</title>
+  </g>
+  <g class="active" stroke="#3F00E5" fill="#3F00E5">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2979,-459)"/>
+   <use xlink:href="#tran" transform="translate(0,-459)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,-250)"/>
+   <title>u1=0.90, u2=0.25 &#8594; z0=0.00, z1=0.46</title>
+  </g>
+  <g class="active" stroke="#3F00D8" fill="#3F00D8">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2959,-570)"/>
+   <use xlink:href="#tran" transform="translate(0,-570)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,-250)"/>
+   <title>u1=0.85, u2=0.25 &#8594; z0=0.00, z1=0.57</title>
+  </g>
+  <g class="active" stroke="#3F00CC" fill="#3F00CC">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2939,-668)"/>
+   <use xlink:href="#tran" transform="translate(0,-668)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,-250)"/>
+   <title>u1=0.80, u2=0.25 &#8594; z0=0.00, z1=0.67</title>
+  </g>
+  <g class="active" stroke="#3F00BF" fill="#3F00BF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2919,-758)"/>
+   <use xlink:href="#tran" transform="translate(0,-758)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,-250)"/>
+   <title>u1=0.75, u2=0.25 &#8594; z0=0.00, z1=0.76</title>
+  </g>
+  <g class="active" stroke="#3F00B2" fill="#3F00B2">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2899,-844)"/>
+   <use xlink:href="#tran" transform="translate(0,-844)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,-250)"/>
+   <title>u1=0.70, u2=0.25 &#8594; z0=0.00, z1=0.84</title>
+  </g>
+  <g class="active" stroke="#3F00A5" fill="#3F00A5">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2879,-928)"/>
+   <use xlink:href="#tran" transform="translate(0,-928)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,-250)"/>
+   <title>u1=0.65, u2=0.25 &#8594; z0=0.00, z1=0.93</title>
+  </g>
+  <g class="active" stroke="#3F9999" fill="#3F9999">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2859,-1010)"/>
+   <use xlink:href="#tran" transform="translate(0,-1010)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,-250)"/>
+   <title>u1=0.60, u2=0.25 &#8594; z0=0.00, z1=1.01</title>
+  </g>
+  <g class="active" stroke="#3F998C" fill="#3F998C">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2839,-1093)"/>
+   <use xlink:href="#tran" transform="translate(0,-1093)"/>
+   <use xlink:href="#orig" transform="translate(550,-250)"/>
+   <title>u1=0.55, u2=0.25 &#8594; z0=0.00, z1=1.09</title>
+  </g>
+  <g class="active" stroke="#3F997F" fill="#3F997F">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2819,-1177)"/>
+   <use xlink:href="#tran" transform="translate(0,-1177)"/>
+   <use xlink:href="#orig" transform="translate(500,-250)"/>
+   <title>u1=0.50, u2=0.25 &#8594; z0=0.00, z1=1.18</title>
+  </g>
+  <g class="active" stroke="#3F9972" fill="#3F9972">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2799,-1263)"/>
+   <use xlink:href="#tran" transform="translate(0,-1263)"/>
+   <use xlink:href="#orig" transform="translate(450,-250)"/>
+   <title>u1=0.45, u2=0.25 &#8594; z0=0.00, z1=1.26</title>
+  </g>
+  <g class="active" stroke="#3F9966" fill="#3F9966">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2779,-1353)"/>
+   <use xlink:href="#tran" transform="translate(0,-1353)"/>
+   <use xlink:href="#orig" transform="translate(400,-250)"/>
+   <title>u1=0.40, u2=0.25 &#8594; z0=0.00, z1=1.35</title>
+  </g>
+  <g class="active" stroke="#3F9959" fill="#3F9959">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2759,-1449)"/>
+   <use xlink:href="#tran" transform="translate(0,-1449)"/>
+   <use xlink:href="#orig" transform="translate(350,-250)"/>
+   <title>u1=0.35, u2=0.25 &#8594; z0=0.00, z1=1.45</title>
+  </g>
+  <g class="active" stroke="#3F994C" fill="#3F994C">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2739,-1551)"/>
+   <use xlink:href="#tran" transform="translate(0,-1551)"/>
+   <use xlink:href="#orig" transform="translate(300,-250)"/>
+   <title>u1=0.30, u2=0.25 &#8594; z0=0.00, z1=1.55</title>
+  </g>
+  <g class="active" stroke="#3F993F" fill="#3F993F">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2719,-1665)"/>
+   <use xlink:href="#tran" transform="translate(0,-1665)"/>
+   <use xlink:href="#orig" transform="translate(250,-250)"/>
+   <title>u1=0.25, u2=0.25 &#8594; z0=0.00, z1=1.67</title>
+  </g>
+  <g class="active" stroke="#3F9933" fill="#3F9933">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2699,-1794)"/>
+   <use xlink:href="#tran" transform="translate(0,-1794)"/>
+   <use xlink:href="#orig" transform="translate(200,-250)"/>
+   <title>u1=0.20, u2=0.25 &#8594; z0=0.00, z1=1.79</title>
+  </g>
+  <g class="active" stroke="#3F9926" fill="#3F9926">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2679,-1947)"/>
+   <use xlink:href="#tran" transform="translate(0,-1947)"/>
+   <use xlink:href="#orig" transform="translate(150,-250)"/>
+   <title>u1=0.15, u2=0.25 &#8594; z0=0.00, z1=1.95</title>
+  </g>
+  <g class="active" stroke="#3F9919" fill="#3F9919">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2659,-2145)"/>
+   <use xlink:href="#tran" transform="translate(0,-2145)"/>
+   <use xlink:href="#orig" transform="translate(100,-250)"/>
+   <title>u1=0.10, u2=0.25 &#8594; z0=0.00, z1=2.15</title>
+  </g>
+  <g class="active" stroke="#3F990C" fill="#3F990C">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(2639,-2447)"/>
+   <use xlink:href="#tran" transform="translate(0,-2447)"/>
+   <use xlink:href="#orig" transform="translate(50,-250)"/>
+   <title>u1=0.05, u2=0.25 &#8594; z0=0.00, z1=2.45</title>
+  </g>
+  <g class="active" stroke="#3300FF" fill="#3300FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-200)"/>
+   <title>u1=1.00, u2=0.20 &#8594; z0=-0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#3300F2" fill="#3300F2">
+   <use xlink:href="#tran" transform="translate(98,-3016)"/>
+   <use xlink:href="#tran" transform="translate(3000,-304)"/>
+   <use xlink:href="#tran" transform="translate(98,-304)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,-200)"/>
+   <title>u1=0.95, u2=0.20 &#8594; z0=0.10, z1=0.30</title>
+  </g>
+  <g class="active" stroke="#3300E5" fill="#3300E5">
+   <use xlink:href="#tran" transform="translate(141,-3014)"/>
+   <use xlink:href="#tran" transform="translate(2982,-436)"/>
+   <use xlink:href="#tran" transform="translate(141,-436)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,-200)"/>
+   <title>u1=0.90, u2=0.20 &#8594; z0=0.14, z1=0.44</title>
+  </g>
+  <g class="active" stroke="#3300D8" fill="#3300D8">
+   <use xlink:href="#tran" transform="translate(176,-3012)"/>
+   <use xlink:href="#tran" transform="translate(2964,-542)"/>
+   <use xlink:href="#tran" transform="translate(176,-542)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,-200)"/>
+   <title>u1=0.85, u2=0.20 &#8594; z0=0.18, z1=0.54</title>
+  </g>
+  <g class="active" stroke="#3300CC" fill="#3300CC">
+   <use xlink:href="#tran" transform="translate(206,-3010)"/>
+   <use xlink:href="#tran" transform="translate(2946,-635)"/>
+   <use xlink:href="#tran" transform="translate(206,-635)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,-200)"/>
+   <title>u1=0.80, u2=0.20 &#8594; z0=0.21, z1=0.64</title>
+  </g>
+  <g class="active" stroke="#3300BF" fill="#3300BF">
+   <use xlink:href="#tran" transform="translate(234,-3008)"/>
+   <use xlink:href="#tran" transform="translate(2927,-721)"/>
+   <use xlink:href="#tran" transform="translate(234,-721)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,-200)"/>
+   <title>u1=0.75, u2=0.20 &#8594; z0=0.23, z1=0.72</title>
+  </g>
+  <g class="active" stroke="#3300B2" fill="#3300B2">
+   <use xlink:href="#tran" transform="translate(260,-3005)"/>
+   <use xlink:href="#tran" transform="translate(2908,-803)"/>
+   <use xlink:href="#tran" transform="translate(260,-803)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,-200)"/>
+   <title>u1=0.70, u2=0.20 &#8594; z0=0.26, z1=0.80</title>
+  </g>
+  <g class="active" stroke="#3300A5" fill="#3300A5">
+   <use xlink:href="#tran" transform="translate(286,-3002)"/>
+   <use xlink:href="#tran" transform="translate(2890,-882)"/>
+   <use xlink:href="#tran" transform="translate(286,-882)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,-200)"/>
+   <title>u1=0.65, u2=0.20 &#8594; z0=0.29, z1=0.88</title>
+  </g>
+  <g class="active" stroke="#339999" fill="#339999">
+   <use xlink:href="#tran" transform="translate(312,-2999)"/>
+   <use xlink:href="#tran" transform="translate(2871,-961)"/>
+   <use xlink:href="#tran" transform="translate(312,-961)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,-200)"/>
+   <title>u1=0.60, u2=0.20 &#8594; z0=0.31, z1=0.96</title>
+  </g>
+  <g class="active" stroke="#33998C" fill="#33998C">
+   <use xlink:href="#tran" transform="translate(337,-2996)"/>
+   <use xlink:href="#tran" transform="translate(2852,-1039)"/>
+   <use xlink:href="#tran" transform="translate(337,-1039)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(550,-200)"/>
+   <title>u1=0.55, u2=0.20 &#8594; z0=0.34, z1=1.04</title>
+  </g>
+  <g class="active" stroke="#33997F" fill="#33997F">
+   <use xlink:href="#tran" transform="translate(363,-2993)"/>
+   <use xlink:href="#tran" transform="translate(2833,-1119)"/>
+   <use xlink:href="#tran" transform="translate(363,-1119)"/>
+   <use xlink:href="#orig" transform="translate(500,-200)"/>
+   <title>u1=0.50, u2=0.20 &#8594; z0=0.36, z1=1.12</title>
+  </g>
+  <g class="active" stroke="#339972" fill="#339972">
+   <use xlink:href="#tran" transform="translate(390,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2813,-1201)"/>
+   <use xlink:href="#tran" transform="translate(390,-1201)"/>
+   <use xlink:href="#orig" transform="translate(450,-200)"/>
+   <title>u1=0.45, u2=0.20 &#8594; z0=0.39, z1=1.20</title>
+  </g>
+  <g class="active" stroke="#339966" fill="#339966">
+   <use xlink:href="#tran" transform="translate(418,-2985)"/>
+   <use xlink:href="#tran" transform="translate(2794,-1287)"/>
+   <use xlink:href="#tran" transform="translate(418,-1287)"/>
+   <use xlink:href="#orig" transform="translate(400,-200)"/>
+   <title>u1=0.40, u2=0.20 &#8594; z0=0.42, z1=1.29</title>
+  </g>
+  <g class="active" stroke="#339959" fill="#339959">
+   <use xlink:href="#tran" transform="translate(447,-2980)"/>
+   <use xlink:href="#tran" transform="translate(2774,-1378)"/>
+   <use xlink:href="#tran" transform="translate(447,-1378)"/>
+   <use xlink:href="#orig" transform="translate(350,-200)"/>
+   <title>u1=0.35, u2=0.20 &#8594; z0=0.45, z1=1.38</title>
+  </g>
+  <g class="active" stroke="#33994C" fill="#33994C">
+   <use xlink:href="#tran" transform="translate(479,-2975)"/>
+   <use xlink:href="#tran" transform="translate(2754,-1475)"/>
+   <use xlink:href="#tran" transform="translate(479,-1475)"/>
+   <use xlink:href="#orig" transform="translate(300,-200)"/>
+   <title>u1=0.30, u2=0.20 &#8594; z0=0.48, z1=1.48</title>
+  </g>
+  <g class="active" stroke="#33993F" fill="#33993F">
+   <use xlink:href="#tran" transform="translate(514,-2969)"/>
+   <use xlink:href="#tran" transform="translate(2733,-1583)"/>
+   <use xlink:href="#tran" transform="translate(514,-1583)"/>
+   <use xlink:href="#orig" transform="translate(250,-200)"/>
+   <title>u1=0.25, u2=0.20 &#8594; z0=0.51, z1=1.58</title>
+  </g>
+  <g class="active" stroke="#339933" fill="#339933">
+   <use xlink:href="#tran" transform="translate(554,-2962)"/>
+   <use xlink:href="#tran" transform="translate(2713,-1706)"/>
+   <use xlink:href="#tran" transform="translate(554,-1706)"/>
+   <use xlink:href="#orig" transform="translate(200,-200)"/>
+   <title>u1=0.20, u2=0.20 &#8594; z0=0.55, z1=1.71</title>
+  </g>
+  <g class="active" stroke="#339926" fill="#339926">
+   <use xlink:href="#tran" transform="translate(601,-2952)"/>
+   <use xlink:href="#tran" transform="translate(2691,-1852)"/>
+   <use xlink:href="#tran" transform="translate(601,-1852)"/>
+   <use xlink:href="#orig" transform="translate(150,-200)"/>
+   <title>u1=0.15, u2=0.20 &#8594; z0=0.60, z1=1.85</title>
+  </g>
+  <g class="active" stroke="#339919" fill="#339919">
+   <use xlink:href="#tran" transform="translate(663,-2940)"/>
+   <use xlink:href="#tran" transform="translate(2669,-2040)"/>
+   <use xlink:href="#tran" transform="translate(663,-2040)"/>
+   <use xlink:href="#orig" transform="translate(100,-200)"/>
+   <title>u1=0.10, u2=0.20 &#8594; z0=0.66, z1=2.04</title>
+  </g>
+  <g class="active" stroke="#33990C" fill="#33990C">
+   <use xlink:href="#tran" transform="translate(756,-2919)"/>
+   <use xlink:href="#tran" transform="translate(2646,-2327)"/>
+   <use xlink:href="#tran" transform="translate(756,-2327)"/>
+   <use xlink:href="#orig" transform="translate(50,-200)"/>
+   <title>u1=0.05, u2=0.20 &#8594; z0=0.76, z1=2.33</title>
+  </g>
+  <g class="active" stroke="#2600FF" fill="#2600FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-150)"/>
+   <title>u1=1.00, u2=0.15 &#8594; z0=-0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#2600F2" fill="#2600F2">
+   <use xlink:href="#tran" transform="translate(188,-3011)"/>
+   <use xlink:href="#tran" transform="translate(3005,-259)"/>
+   <use xlink:href="#tran" transform="translate(188,-259)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,-150)"/>
+   <title>u1=0.95, u2=0.15 &#8594; z0=0.19, z1=0.26</title>
+  </g>
+  <g class="active" stroke="#2600E5" fill="#2600E5">
+   <use xlink:href="#tran" transform="translate(269,-3004)"/>
+   <use xlink:href="#tran" transform="translate(2992,-371)"/>
+   <use xlink:href="#tran" transform="translate(269,-371)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,-150)"/>
+   <title>u1=0.90, u2=0.15 &#8594; z0=0.27, z1=0.37</title>
+  </g>
+  <g class="active" stroke="#2600D8" fill="#2600D8">
+   <use xlink:href="#tran" transform="translate(335,-2997)"/>
+   <use xlink:href="#tran" transform="translate(2978,-461)"/>
+   <use xlink:href="#tran" transform="translate(335,-461)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,-150)"/>
+   <title>u1=0.85, u2=0.15 &#8594; z0=0.34, z1=0.46</title>
+  </g>
+  <g class="active" stroke="#2600CC" fill="#2600CC">
+   <use xlink:href="#tran" transform="translate(392,-2989)"/>
+   <use xlink:href="#tran" transform="translate(2964,-540)"/>
+   <use xlink:href="#tran" transform="translate(392,-540)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,-150)"/>
+   <title>u1=0.80, u2=0.15 &#8594; z0=0.39, z1=0.54</title>
+  </g>
+  <g class="active" stroke="#2600BF" fill="#2600BF">
+   <use xlink:href="#tran" transform="translate(445,-2981)"/>
+   <use xlink:href="#tran" transform="translate(2950,-613)"/>
+   <use xlink:href="#tran" transform="translate(445,-613)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,-150)"/>
+   <title>u1=0.75, u2=0.15 &#8594; z0=0.45, z1=0.61</title>
+  </g>
+  <g class="active" stroke="#2600B2" fill="#2600B2">
+   <use xlink:href="#tran" transform="translate(496,-2972)"/>
+   <use xlink:href="#tran" transform="translate(2935,-683)"/>
+   <use xlink:href="#tran" transform="translate(496,-683)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,-150)"/>
+   <title>u1=0.70, u2=0.15 &#8594; z0=0.50, z1=0.68</title>
+  </g>
+  <g class="active" stroke="#2600A5" fill="#2600A5">
+   <use xlink:href="#tran" transform="translate(545,-2963)"/>
+   <use xlink:href="#tran" transform="translate(2920,-750)"/>
+   <use xlink:href="#tran" transform="translate(545,-750)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,-150)"/>
+   <title>u1=0.65, u2=0.15 &#8594; z0=0.55, z1=0.75</title>
+  </g>
+  <g class="active" stroke="#269999" fill="#269999">
+   <use xlink:href="#tran" transform="translate(594,-2954)"/>
+   <use xlink:href="#tran" transform="translate(2905,-817)"/>
+   <use xlink:href="#tran" transform="translate(594,-817)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,-150)"/>
+   <title>u1=0.60, u2=0.15 &#8594; z0=0.59, z1=0.82</title>
+  </g>
+  <g class="active" stroke="#26998C" fill="#26998C">
+   <use xlink:href="#tran" transform="translate(642,-2944)"/>
+   <use xlink:href="#tran" transform="translate(2889,-884)"/>
+   <use xlink:href="#tran" transform="translate(642,-884)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(550,-150)"/>
+   <title>u1=0.55, u2=0.15 &#8594; z0=0.64, z1=0.88</title>
+  </g>
+  <g class="active" stroke="#26997F" fill="#26997F">
+   <use xlink:href="#tran" transform="translate(692,-2933)"/>
+   <use xlink:href="#tran" transform="translate(2873,-952)"/>
+   <use xlink:href="#tran" transform="translate(692,-952)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(500,-150)"/>
+   <title>u1=0.50, u2=0.15 &#8594; z0=0.69, z1=0.95</title>
+  </g>
+  <g class="active" stroke="#269972" fill="#269972">
+   <use xlink:href="#tran" transform="translate(742,-2922)"/>
+   <use xlink:href="#tran" transform="translate(2856,-1022)"/>
+   <use xlink:href="#tran" transform="translate(742,-1022)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(450,-150)"/>
+   <title>u1=0.45, u2=0.15 &#8594; z0=0.74, z1=1.02</title>
+  </g>
+  <g class="active" stroke="#269966" fill="#269966">
+   <use xlink:href="#tran" transform="translate(795,-2910)"/>
+   <use xlink:href="#tran" transform="translate(2839,-1095)"/>
+   <use xlink:href="#tran" transform="translate(795,-1095)"/>
+   <use xlink:href="#orig" transform="translate(400,-150)"/>
+   <title>u1=0.40, u2=0.15 &#8594; z0=0.80, z1=1.10</title>
+  </g>
+  <g class="active" stroke="#269959" fill="#269959">
+   <use xlink:href="#tran" transform="translate(851,-2897)"/>
+   <use xlink:href="#tran" transform="translate(2820,-1172)"/>
+   <use xlink:href="#tran" transform="translate(851,-1172)"/>
+   <use xlink:href="#orig" transform="translate(350,-150)"/>
+   <title>u1=0.35, u2=0.15 &#8594; z0=0.85, z1=1.17</title>
+  </g>
+  <g class="active" stroke="#26994C" fill="#26994C">
+   <use xlink:href="#tran" transform="translate(912,-2883)"/>
+   <use xlink:href="#tran" transform="translate(2801,-1255)"/>
+   <use xlink:href="#tran" transform="translate(912,-1255)"/>
+   <use xlink:href="#orig" transform="translate(300,-150)"/>
+   <title>u1=0.30, u2=0.15 &#8594; z0=0.91, z1=1.26</title>
+  </g>
+  <g class="active" stroke="#26993F" fill="#26993F">
+   <use xlink:href="#tran" transform="translate(978,-2867)"/>
+   <use xlink:href="#tran" transform="translate(2781,-1347)"/>
+   <use xlink:href="#tran" transform="translate(978,-1347)"/>
+   <use xlink:href="#orig" transform="translate(250,-150)"/>
+   <title>u1=0.25, u2=0.15 &#8594; z0=0.98, z1=1.35</title>
+  </g>
+  <g class="active" stroke="#269933" fill="#269933">
+   <use xlink:href="#tran" transform="translate(1054,-2848)"/>
+   <use xlink:href="#tran" transform="translate(2759,-1451)"/>
+   <use xlink:href="#tran" transform="translate(1054,-1451)"/>
+   <use xlink:href="#orig" transform="translate(200,-150)"/>
+   <title>u1=0.20, u2=0.15 &#8594; z0=1.05, z1=1.45</title>
+  </g>
+  <g class="active" stroke="#269926" fill="#269926">
+   <use xlink:href="#tran" transform="translate(1144,-2827)"/>
+   <use xlink:href="#tran" transform="translate(2735,-1575)"/>
+   <use xlink:href="#tran" transform="translate(1144,-1575)"/>
+   <use xlink:href="#orig" transform="translate(150,-150)"/>
+   <title>u1=0.15, u2=0.15 &#8594; z0=1.14, z1=1.58</title>
+  </g>
+  <g class="active" stroke="#269919" fill="#269919">
+   <use xlink:href="#tran" transform="translate(1261,-2800)"/>
+   <use xlink:href="#tran" transform="translate(2708,-1736)"/>
+   <use xlink:href="#tran" transform="translate(1261,-1736)"/>
+   <use xlink:href="#orig" transform="translate(100,-150)"/>
+   <title>u1=0.10, u2=0.15 &#8594; z0=1.26, z1=1.74</title>
+  </g>
+  <g class="active" stroke="#26990C" fill="#26990C">
+   <use xlink:href="#tran" transform="translate(1438,-2761)"/>
+   <use xlink:href="#tran" transform="translate(2676,-1980)"/>
+   <use xlink:href="#tran" transform="translate(1438,-1980)"/>
+   <use xlink:href="#orig" transform="translate(50,-150)"/>
+   <title>u1=0.05, u2=0.15 &#8594; z0=1.44, z1=1.98</title>
+  </g>
+  <g class="active" stroke="#1900FF" fill="#1900FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-100)"/>
+   <title>u1=1.00, u2=0.10 &#8594; z0=-0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#1900F2" fill="#1900F2">
+   <use xlink:href="#tran" transform="translate(259,-3005)"/>
+   <use xlink:href="#tran" transform="translate(3011,-188)"/>
+   <use xlink:href="#tran" transform="translate(259,-188)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,-100)"/>
+   <title>u1=0.95, u2=0.10 &#8594; z0=0.26, z1=0.19</title>
+  </g>
+  <g class="active" stroke="#1900E5" fill="#1900E5">
+   <use xlink:href="#tran" transform="translate(371,-2992)"/>
+   <use xlink:href="#tran" transform="translate(3004,-269)"/>
+   <use xlink:href="#tran" transform="translate(371,-269)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,-100)"/>
+   <title>u1=0.90, u2=0.10 &#8594; z0=0.37, z1=0.27</title>
+  </g>
+  <g class="active" stroke="#1900D8" fill="#1900D8">
+   <use xlink:href="#tran" transform="translate(461,-2978)"/>
+   <use xlink:href="#tran" transform="translate(2997,-335)"/>
+   <use xlink:href="#tran" transform="translate(461,-335)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,-100)"/>
+   <title>u1=0.85, u2=0.10 &#8594; z0=0.46, z1=0.34</title>
+  </g>
+  <g class="active" stroke="#1900CC" fill="#1900CC">
+   <use xlink:href="#tran" transform="translate(540,-2964)"/>
+   <use xlink:href="#tran" transform="translate(2989,-392)"/>
+   <use xlink:href="#tran" transform="translate(540,-392)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,-100)"/>
+   <title>u1=0.80, u2=0.10 &#8594; z0=0.54, z1=0.39</title>
+  </g>
+  <g class="active" stroke="#1900BF" fill="#1900BF">
+   <use xlink:href="#tran" transform="translate(613,-2950)"/>
+   <use xlink:href="#tran" transform="translate(2981,-445)"/>
+   <use xlink:href="#tran" transform="translate(613,-445)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,-100)"/>
+   <title>u1=0.75, u2=0.10 &#8594; z0=0.61, z1=0.45</title>
+  </g>
+  <g class="active" stroke="#1900B2" fill="#1900B2">
+   <use xlink:href="#tran" transform="translate(683,-2935)"/>
+   <use xlink:href="#tran" transform="translate(2972,-496)"/>
+   <use xlink:href="#tran" transform="translate(683,-496)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,-100)"/>
+   <title>u1=0.70, u2=0.10 &#8594; z0=0.68, z1=0.50</title>
+  </g>
+  <g class="active" stroke="#1900A5" fill="#1900A5">
+   <use xlink:href="#tran" transform="translate(750,-2920)"/>
+   <use xlink:href="#tran" transform="translate(2963,-545)"/>
+   <use xlink:href="#tran" transform="translate(750,-545)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,-100)"/>
+   <title>u1=0.65, u2=0.10 &#8594; z0=0.75, z1=0.55</title>
+  </g>
+  <g class="active" stroke="#199999" fill="#199999">
+   <use xlink:href="#tran" transform="translate(817,-2905)"/>
+   <use xlink:href="#tran" transform="translate(2954,-594)"/>
+   <use xlink:href="#tran" transform="translate(817,-594)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,-100)"/>
+   <title>u1=0.60, u2=0.10 &#8594; z0=0.82, z1=0.59</title>
+  </g>
+  <g class="active" stroke="#19998C" fill="#19998C">
+   <use xlink:href="#tran" transform="translate(884,-2889)"/>
+   <use xlink:href="#tran" transform="translate(2944,-642)"/>
+   <use xlink:href="#tran" transform="translate(884,-642)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(550,-100)"/>
+   <title>u1=0.55, u2=0.10 &#8594; z0=0.88, z1=0.64</title>
+  </g>
+  <g class="active" stroke="#19997F" fill="#19997F">
+   <use xlink:href="#tran" transform="translate(952,-2873)"/>
+   <use xlink:href="#tran" transform="translate(2933,-692)"/>
+   <use xlink:href="#tran" transform="translate(952,-692)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(500,-100)"/>
+   <title>u1=0.50, u2=0.10 &#8594; z0=0.95, z1=0.69</title>
+  </g>
+  <g class="active" stroke="#199972" fill="#199972">
+   <use xlink:href="#tran" transform="translate(1022,-2856)"/>
+   <use xlink:href="#tran" transform="translate(2922,-742)"/>
+   <use xlink:href="#tran" transform="translate(1022,-742)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(450,-100)"/>
+   <title>u1=0.45, u2=0.10 &#8594; z0=1.02, z1=0.74</title>
+  </g>
+  <g class="active" stroke="#199966" fill="#199966">
+   <use xlink:href="#tran" transform="translate(1095,-2839)"/>
+   <use xlink:href="#tran" transform="translate(2910,-795)"/>
+   <use xlink:href="#tran" transform="translate(1095,-795)"/>
+   <use xlink:href="#orig" transform="translate(400,-100)"/>
+   <title>u1=0.40, u2=0.10 &#8594; z0=1.10, z1=0.80</title>
+  </g>
+  <g class="active" stroke="#199959" fill="#199959">
+   <use xlink:href="#tran" transform="translate(1172,-2820)"/>
+   <use xlink:href="#tran" transform="translate(2897,-851)"/>
+   <use xlink:href="#tran" transform="translate(1172,-851)"/>
+   <use xlink:href="#orig" transform="translate(350,-100)"/>
+   <title>u1=0.35, u2=0.10 &#8594; z0=1.17, z1=0.85</title>
+  </g>
+  <g class="active" stroke="#19994C" fill="#19994C">
+   <use xlink:href="#tran" transform="translate(1255,-2801)"/>
+   <use xlink:href="#tran" transform="translate(2883,-912)"/>
+   <use xlink:href="#tran" transform="translate(1255,-912)"/>
+   <use xlink:href="#orig" transform="translate(300,-100)"/>
+   <title>u1=0.30, u2=0.10 &#8594; z0=1.26, z1=0.91</title>
+  </g>
+  <g class="active" stroke="#19993F" fill="#19993F">
+   <use xlink:href="#tran" transform="translate(1347,-2781)"/>
+   <use xlink:href="#tran" transform="translate(2867,-978)"/>
+   <use xlink:href="#tran" transform="translate(1347,-978)"/>
+   <use xlink:href="#orig" transform="translate(250,-100)"/>
+   <title>u1=0.25, u2=0.10 &#8594; z0=1.35, z1=0.98</title>
+  </g>
+  <g class="active" stroke="#199933" fill="#199933">
+   <use xlink:href="#tran" transform="translate(1451,-2759)"/>
+   <use xlink:href="#tran" transform="translate(2848,-1054)"/>
+   <use xlink:href="#tran" transform="translate(1451,-1054)"/>
+   <use xlink:href="#orig" transform="translate(200,-100)"/>
+   <title>u1=0.20, u2=0.10 &#8594; z0=1.45, z1=1.05</title>
+  </g>
+  <g class="active" stroke="#199926" fill="#199926">
+   <use xlink:href="#tran" transform="translate(1575,-2735)"/>
+   <use xlink:href="#tran" transform="translate(2827,-1144)"/>
+   <use xlink:href="#tran" transform="translate(1575,-1144)"/>
+   <use xlink:href="#orig" transform="translate(150,-100)"/>
+   <title>u1=0.15, u2=0.10 &#8594; z0=1.58, z1=1.14</title>
+  </g>
+  <g class="active" stroke="#199919" fill="#199919">
+   <use xlink:href="#tran" transform="translate(1736,-2708)"/>
+   <use xlink:href="#tran" transform="translate(2800,-1261)"/>
+   <use xlink:href="#tran" transform="translate(1736,-1261)"/>
+   <use xlink:href="#orig" transform="translate(100,-100)"/>
+   <title>u1=0.10, u2=0.10 &#8594; z0=1.74, z1=1.26</title>
+  </g>
+  <g class="active" stroke="#19990C" fill="#19990C">
+   <use xlink:href="#tran" transform="translate(1980,-2676)"/>
+   <use xlink:href="#tran" transform="translate(2761,-1438)"/>
+   <use xlink:href="#tran" transform="translate(1980,-1438)"/>
+   <use xlink:href="#orig" transform="translate(50,-100)"/>
+   <title>u1=0.05, u2=0.10 &#8594; z0=1.98, z1=1.44</title>
+  </g>
+  <g class="active" stroke="#0C00FF" fill="#0C00FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,-50)"/>
+   <title>u1=1.00, u2=0.05 &#8594; z0=-0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#0C00F2" fill="#0C00F2">
+   <use xlink:href="#tran" transform="translate(304,-3000)"/>
+   <use xlink:href="#tran" transform="translate(3016,-98)"/>
+   <use xlink:href="#tran" transform="translate(304,-98)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,-50)"/>
+   <title>u1=0.95, u2=0.05 &#8594; z0=0.30, z1=0.10</title>
+  </g>
+  <g class="active" stroke="#0C00E5" fill="#0C00E5">
+   <use xlink:href="#tran" transform="translate(436,-2982)"/>
+   <use xlink:href="#tran" transform="translate(3014,-141)"/>
+   <use xlink:href="#tran" transform="translate(436,-141)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,-50)"/>
+   <title>u1=0.90, u2=0.05 &#8594; z0=0.44, z1=0.14</title>
+  </g>
+  <g class="active" stroke="#0C00D8" fill="#0C00D8">
+   <use xlink:href="#tran" transform="translate(542,-2964)"/>
+   <use xlink:href="#tran" transform="translate(3012,-176)"/>
+   <use xlink:href="#tran" transform="translate(542,-176)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,-50)"/>
+   <title>u1=0.85, u2=0.05 &#8594; z0=0.54, z1=0.18</title>
+  </g>
+  <g class="active" stroke="#0C00CC" fill="#0C00CC">
+   <use xlink:href="#tran" transform="translate(635,-2946)"/>
+   <use xlink:href="#tran" transform="translate(3010,-206)"/>
+   <use xlink:href="#tran" transform="translate(635,-206)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,-50)"/>
+   <title>u1=0.80, u2=0.05 &#8594; z0=0.64, z1=0.21</title>
+  </g>
+  <g class="active" stroke="#0C00BF" fill="#0C00BF">
+   <use xlink:href="#tran" transform="translate(721,-2927)"/>
+   <use xlink:href="#tran" transform="translate(3008,-234)"/>
+   <use xlink:href="#tran" transform="translate(721,-234)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,-50)"/>
+   <title>u1=0.75, u2=0.05 &#8594; z0=0.72, z1=0.23</title>
+  </g>
+  <g class="active" stroke="#0C00B2" fill="#0C00B2">
+   <use xlink:href="#tran" transform="translate(803,-2908)"/>
+   <use xlink:href="#tran" transform="translate(3005,-260)"/>
+   <use xlink:href="#tran" transform="translate(803,-260)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,-50)"/>
+   <title>u1=0.70, u2=0.05 &#8594; z0=0.80, z1=0.26</title>
+  </g>
+  <g class="active" stroke="#0C00A5" fill="#0C00A5">
+   <use xlink:href="#tran" transform="translate(882,-2890)"/>
+   <use xlink:href="#tran" transform="translate(3002,-286)"/>
+   <use xlink:href="#tran" transform="translate(882,-286)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,-50)"/>
+   <title>u1=0.65, u2=0.05 &#8594; z0=0.88, z1=0.29</title>
+  </g>
+  <g class="active" stroke="#0C9999" fill="#0C9999">
+   <use xlink:href="#tran" transform="translate(961,-2871)"/>
+   <use xlink:href="#tran" transform="translate(2999,-312)"/>
+   <use xlink:href="#tran" transform="translate(961,-312)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,-50)"/>
+   <title>u1=0.60, u2=0.05 &#8594; z0=0.96, z1=0.31</title>
+  </g>
+  <g class="active" stroke="#0C998C" fill="#0C998C">
+   <use xlink:href="#tran" transform="translate(1039,-2852)"/>
+   <use xlink:href="#tran" transform="translate(2996,-337)"/>
+   <use xlink:href="#tran" transform="translate(1039,-337)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(550,-50)"/>
+   <title>u1=0.55, u2=0.05 &#8594; z0=1.04, z1=0.34</title>
+  </g>
+  <g class="active" stroke="#0C997F" fill="#0C997F">
+   <use xlink:href="#tran" transform="translate(1119,-2833)"/>
+   <use xlink:href="#tran" transform="translate(2993,-363)"/>
+   <use xlink:href="#tran" transform="translate(1119,-363)"/>
+   <use xlink:href="#orig" transform="translate(500,-50)"/>
+   <title>u1=0.50, u2=0.05 &#8594; z0=1.12, z1=0.36</title>
+  </g>
+  <g class="active" stroke="#0C9972" fill="#0C9972">
+   <use xlink:href="#tran" transform="translate(1201,-2813)"/>
+   <use xlink:href="#tran" transform="translate(2989,-390)"/>
+   <use xlink:href="#tran" transform="translate(1201,-390)"/>
+   <use xlink:href="#orig" transform="translate(450,-50)"/>
+   <title>u1=0.45, u2=0.05 &#8594; z0=1.20, z1=0.39</title>
+  </g>
+  <g class="active" stroke="#0C9966" fill="#0C9966">
+   <use xlink:href="#tran" transform="translate(1287,-2794)"/>
+   <use xlink:href="#tran" transform="translate(2985,-418)"/>
+   <use xlink:href="#tran" transform="translate(1287,-418)"/>
+   <use xlink:href="#orig" transform="translate(400,-50)"/>
+   <title>u1=0.40, u2=0.05 &#8594; z0=1.29, z1=0.42</title>
+  </g>
+  <g class="active" stroke="#0C9959" fill="#0C9959">
+   <use xlink:href="#tran" transform="translate(1378,-2774)"/>
+   <use xlink:href="#tran" transform="translate(2980,-447)"/>
+   <use xlink:href="#tran" transform="translate(1378,-447)"/>
+   <use xlink:href="#orig" transform="translate(350,-50)"/>
+   <title>u1=0.35, u2=0.05 &#8594; z0=1.38, z1=0.45</title>
+  </g>
+  <g class="active" stroke="#0C994C" fill="#0C994C">
+   <use xlink:href="#tran" transform="translate(1475,-2754)"/>
+   <use xlink:href="#tran" transform="translate(2975,-479)"/>
+   <use xlink:href="#tran" transform="translate(1475,-479)"/>
+   <use xlink:href="#orig" transform="translate(300,-50)"/>
+   <title>u1=0.30, u2=0.05 &#8594; z0=1.48, z1=0.48</title>
+  </g>
+  <g class="active" stroke="#0C993F" fill="#0C993F">
+   <use xlink:href="#tran" transform="translate(1583,-2733)"/>
+   <use xlink:href="#tran" transform="translate(2969,-514)"/>
+   <use xlink:href="#tran" transform="translate(1583,-514)"/>
+   <use xlink:href="#orig" transform="translate(250,-50)"/>
+   <title>u1=0.25, u2=0.05 &#8594; z0=1.58, z1=0.51</title>
+  </g>
+  <g class="active" stroke="#0C9933" fill="#0C9933">
+   <use xlink:href="#tran" transform="translate(1706,-2713)"/>
+   <use xlink:href="#tran" transform="translate(2962,-554)"/>
+   <use xlink:href="#tran" transform="translate(1706,-554)"/>
+   <use xlink:href="#orig" transform="translate(200,-50)"/>
+   <title>u1=0.20, u2=0.05 &#8594; z0=1.71, z1=0.55</title>
+  </g>
+  <g class="active" stroke="#0C9926" fill="#0C9926">
+   <use xlink:href="#tran" transform="translate(1852,-2691)"/>
+   <use xlink:href="#tran" transform="translate(2952,-601)"/>
+   <use xlink:href="#tran" transform="translate(1852,-601)"/>
+   <use xlink:href="#orig" transform="translate(150,-50)"/>
+   <title>u1=0.15, u2=0.05 &#8594; z0=1.85, z1=0.60</title>
+  </g>
+  <g class="active" stroke="#0C9919" fill="#0C9919">
+   <use xlink:href="#tran" transform="translate(2040,-2669)"/>
+   <use xlink:href="#tran" transform="translate(2940,-663)"/>
+   <use xlink:href="#tran" transform="translate(2040,-663)"/>
+   <use xlink:href="#orig" transform="translate(100,-50)"/>
+   <title>u1=0.10, u2=0.05 &#8594; z0=2.04, z1=0.66</title>
+  </g>
+  <g class="active" stroke="#0C990C" fill="#0C990C">
+   <use xlink:href="#tran" transform="translate(2327,-2646)"/>
+   <use xlink:href="#tran" transform="translate(2919,-756)"/>
+   <use xlink:href="#tran" transform="translate(2327,-756)"/>
+   <use xlink:href="#orig" transform="translate(50,-50)"/>
+   <title>u1=0.05, u2=0.05 &#8594; z0=2.33, z1=0.76</title>
+  </g>
+  <g class="active" stroke="#0000FF" fill="#0000FF">
+   <use xlink:href="#tran" transform="translate(0,-3018)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(0,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(1000,0)"/>
+   <title>u1=1.00, u2=0.00 &#8594; z0=-0.00, z1=-0.00</title>
+  </g>
+  <g class="active" stroke="#0000F2" fill="#0000F2">
+   <use xlink:href="#tran" transform="translate(320,-2998)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(320,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(950,0)"/>
+   <title>u1=0.95, u2=0.00 &#8594; z0=0.32, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#0000E5" fill="#0000E5">
+   <use xlink:href="#tran" transform="translate(459,-2979)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(459,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(900,0)"/>
+   <title>u1=0.90, u2=0.00 &#8594; z0=0.46, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#0000D8" fill="#0000D8">
+   <use xlink:href="#tran" transform="translate(570,-2959)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(570,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(850,0)"/>
+   <title>u1=0.85, u2=0.00 &#8594; z0=0.57, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#0000CC" fill="#0000CC">
+   <use xlink:href="#tran" transform="translate(668,-2939)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(668,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(800,0)"/>
+   <title>u1=0.80, u2=0.00 &#8594; z0=0.67, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#0000BF" fill="#0000BF">
+   <use xlink:href="#tran" transform="translate(758,-2919)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(758,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(750,0)"/>
+   <title>u1=0.75, u2=0.00 &#8594; z0=0.76, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#0000B2" fill="#0000B2">
+   <use xlink:href="#tran" transform="translate(844,-2899)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(844,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(700,0)"/>
+   <title>u1=0.70, u2=0.00 &#8594; z0=0.84, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#0000A5" fill="#0000A5">
+   <use xlink:href="#tran" transform="translate(928,-2879)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(928,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(650,0)"/>
+   <title>u1=0.65, u2=0.00 &#8594; z0=0.93, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009999" fill="#009999">
+   <use xlink:href="#tran" transform="translate(1010,-2859)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1010,0)" class="noevent"/>
+   <use xlink:href="#orig" transform="translate(600,0)"/>
+   <title>u1=0.60, u2=0.00 &#8594; z0=1.01, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#00998C" fill="#00998C">
+   <use xlink:href="#tran" transform="translate(1093,-2839)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1093,0)"/>
+   <use xlink:href="#orig" transform="translate(550,0)"/>
+   <title>u1=0.55, u2=0.00 &#8594; z0=1.09, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#00997F" fill="#00997F">
+   <use xlink:href="#tran" transform="translate(1177,-2819)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1177,0)"/>
+   <use xlink:href="#orig" transform="translate(500,0)"/>
+   <title>u1=0.50, u2=0.00 &#8594; z0=1.18, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009972" fill="#009972">
+   <use xlink:href="#tran" transform="translate(1263,-2799)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1263,0)"/>
+   <use xlink:href="#orig" transform="translate(450,0)"/>
+   <title>u1=0.45, u2=0.00 &#8594; z0=1.26, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009966" fill="#009966">
+   <use xlink:href="#tran" transform="translate(1353,-2779)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1353,0)"/>
+   <use xlink:href="#orig" transform="translate(400,0)"/>
+   <title>u1=0.40, u2=0.00 &#8594; z0=1.35, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009959" fill="#009959">
+   <use xlink:href="#tran" transform="translate(1449,-2759)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1449,0)"/>
+   <use xlink:href="#orig" transform="translate(350,0)"/>
+   <title>u1=0.35, u2=0.00 &#8594; z0=1.45, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#00994C" fill="#00994C">
+   <use xlink:href="#tran" transform="translate(1551,-2739)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1551,0)"/>
+   <use xlink:href="#orig" transform="translate(300,0)"/>
+   <title>u1=0.30, u2=0.00 &#8594; z0=1.55, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#00993F" fill="#00993F">
+   <use xlink:href="#tran" transform="translate(1665,-2719)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1665,0)"/>
+   <use xlink:href="#orig" transform="translate(250,0)"/>
+   <title>u1=0.25, u2=0.00 &#8594; z0=1.67, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009933" fill="#009933">
+   <use xlink:href="#tran" transform="translate(1794,-2699)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1794,0)"/>
+   <use xlink:href="#orig" transform="translate(200,0)"/>
+   <title>u1=0.20, u2=0.00 &#8594; z0=1.79, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009926" fill="#009926">
+   <use xlink:href="#tran" transform="translate(1947,-2679)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(1947,0)"/>
+   <use xlink:href="#orig" transform="translate(150,0)"/>
+   <title>u1=0.15, u2=0.00 &#8594; z0=1.95, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#009919" fill="#009919">
+   <use xlink:href="#tran" transform="translate(2145,-2659)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(2145,0)"/>
+   <use xlink:href="#orig" transform="translate(100,0)"/>
+   <title>u1=0.10, u2=0.00 &#8594; z0=2.15, z1=0.00</title>
+  </g>
+  <g class="active" stroke="#00990C" fill="#00990C">
+   <use xlink:href="#tran" transform="translate(2447,-2639)"/>
+   <use xlink:href="#tran" transform="translate(3018,0)"/>
+   <use xlink:href="#tran" transform="translate(2447,0)"/>
+   <use xlink:href="#orig" transform="translate(50,0)"/>
+   <title>u1=0.05, u2=0.00 &#8594; z0=2.45, z1=0.00</title>
+  </g>
+<!-- } END_DYNAMIC_SVG -->
+ </g>
+</svg>
+<!-- Please retain this and other comments, which contain Python code to generate this SVG. """
+# Store output as a group with id="main" in string array "outs"
+import re
+import math
+def hex_octet(x): return "%02X" % (0 if x < 0 else (255 if x > 1 else x * 255))
+def pdf(x, mean, stddev):
+ x_minus_mean = x - mean
+ return (math.exp(x_minus_mean * x_minus_mean / (-2.0 * stddev * stddev)) /
+         (sqrt_pi_2 * stddev))
+
+outs    = []
+scale_x = 1000
+scale_y = 1000
+step_x  = 50
+step_y  = 50
+pi_2           = math.pi * 2
+sqrt_pi_2      = math.sqrt(pi_2)
+exp_minus_half = math.exp(-0.5)
+
+# Iterate in descending order to more easily cover range (0, 1]
+for  y in range(scale_y, -1, -step_y):
+ for x in range(scale_x,  0, -step_x):
+  u1 = float(x) / scale_x
+  u2 = float(y) / scale_y
+  root  = math.sqrt(-2 * math.log(u1))
+  angle = pi_2 * u2
+  z0 =  root * math.cos(angle)
+  z1 =  root * math.sin(angle)
+  pdf0 = -2620 - 1000 * pdf(z0, 0, 1)
+  pdf1 =  2620 + 1000 * pdf(z1, 0, 1)
+  is_within_stddev = (u1 >= exp_minus_half)
+  colour = "#%s%s%s" % (hex_octet(u2), "00" if is_within_stddev else "99", hex_octet(u1))
+  coord_orig = "%d,%d" % (x, -y)
+  coord_tran = "%d,%d" % (z0 * scale_x, z1 * -scale_y)
+  noevent    = ' class="noevent"' if (-0.01 < z0 and z0 < 1.05 and -0.01 < z1 and z1 < 1.05) else ''
+  outs.append('''
+  <g class="active" stroke="%s" fill="%s">
+   <use xlink:href="#tran" transform="translate(%d,%d)"/>
+   <use xlink:href="#tran" transform="translate(%d,%d)"/>
+   <use xlink:href="#tran" transform="translate(%s)"%s/>
+   <use xlink:href="#orig" transform="translate(%s)"/>
+   <title>u1=%.2f, u2=%.2f &#8594; z0=%.2f, z1=%.2f</title>
+  </g>''' % (colour, colour, z0 * scale_x, pdf0, pdf1, z1 * -scale_y, coord_tran, noevent, coord_orig, u1, u2, z0, z1))
+ print(y, u2)
+
+# Code to compile everything into a .svg file follows...
+double_dash = '-' + '-' # because SVG comments cannot have 2 consecutive '-'s
+myself      = open(__file__, 'r').read() # the contents of this very file
+file_out    = open(re.sub(r'\..*?$', '', __file__) + '.svg', 'w') # *.* -> *.svg
+try: # use try/finally so that file is closed even if write fails
+ file_out.write(
+  '''<?xml version="1.0" encoding="UTF-8"?><!%s
+%s''' % (double_dash,
+         re.sub(r'(BEGIN[_]DYNAMIC_SVG.*\n?)[\s\S]*(\n.*END[_]DYNAMIC_SVG)',
+                r'\1\n%s\2' % (''.join(outs).strip('\n')),
+                myself))) # replace dynamic SVG block with contents of "outs"
+finally:
+ file_out.close()
+# SVG-Python near-polyglot framework by CMG Lee (Oct 2014) -->
